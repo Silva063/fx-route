@@ -242,3 +242,4 @@ button.link {
 @media (min-width: 700px) {
   .tabbar { max-width: 640px; margin: 0 auto; border: 1px solid var(--line); border-bottom: 0; border-radius: var(--radius) var(--radius) 0 0; }
 }
+.runner-bad { color: var(--warn-text); font-weight: 600; }

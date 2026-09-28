@@ -144,12 +144,17 @@ export const SOURCE_STATUSES = [
 ] as const;
 export type SourceStatusCode = (typeof SOURCE_STATUSES)[number];
 
+/**
+ * Статус источника хранится отдельно для каждого места сбора (runner: 'pc' | 'github-actions'):
+ * неудача в одном месте не перебивает успешный сбор в другом.
+ */
 export interface SourceStatus {
   id: string;
   status: SourceStatusCode;
   message?: string;
   lastAttemptAt: string;
   lastSuccessAt?: string;
+  /** Место сбора: 'pc' (ПК) или 'github-actions'. Старое значение 'local' читается как 'pc'. */
   runner: string;
   offers: number;
   suspicious: number;

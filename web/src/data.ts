@@ -1,3 +1,4 @@
+import { emptyRates, mergeRates } from '../../src/core/merge';
 import { ratesFileSchema } from '../../src/core/schema';
 import type { FeeRule, RatesFile, Settings, SourceDef, TableDef, Transition } from '../../src/core/types';
 
@@ -49,7 +50,15 @@ export async function loadData(): Promise<LoadedData> {
   try {
     const parsed = ratesFileSchema.safeParse(await getJson(RATES_URL));
     if (!parsed.success) return { config, rates: null, ratesError: 'Файл курсов повреждён' };
-    return { config, rates: parsed.data as RatesFile };
+    // Та же нормализация, что при публикации: статусы по местам сбора, старое 'local' → 'pc',
+    // очистка успехов, приписанных не тому месту сбора (файлы старого формата). Сроки хранения
+    // здесь не применяются — это делает сборщик.
+    const rates = mergeRates(parsed.data as RatesFile, emptyRates(new Date(0)), {
+      now: new Date(),
+      retainOffersDays: 3650,
+      retainOfficialDays: 3650,
+    });
+    return { config, rates };
   } catch (e) {
     return { config, rates: null, ratesError: (e as Error).message };
   }

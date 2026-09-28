@@ -107,17 +107,42 @@ describe('mergeRates', () => {
     }
   });
 
-  it('статус источника — по последней попытке, lastSuccessAt сохраняется', () => {
+  it('статус хранится по месту сбора: неудача GitHub не перебивает успех ПК', async () => {
+    const { sourceHealth } = await import('../../src/core/merge');
+    const { effectiveAt } = await import('../../src/core/validity');
+    // ПК собрал успешно (старое имя места сбора «local» читается как «pc»).
     const ok = fileWith(offersAt('2026-09-28T08:00:00Z', 17.6), 'local', '2026-09-28T08:00:00Z');
     const failed = fileWith([], 'github-actions', '2026-09-28T10:00:00Z', {
       sources: [
-        { id: 'a', status: 'protected', lastAttemptAt: '2026-09-28T10:00:00Z', runner: 'github-actions', offers: 0, suspicious: 0 },
+        { id: 'a', status: 'robots-blocked', message: 'robots.txt недоступен (HTTP 503)', lastAttemptAt: '2026-09-28T10:00:00Z', runner: 'github-actions', offers: 0, suspicious: 0 },
       ],
     });
-    const m = mergeRates(ok, failed, opts);
-    expect(m.sources[0]).toMatchObject({ status: 'protected', lastSuccessAt: '2026-09-28T08:00:00Z' });
-    // Курсы с успешного запуска остаются — с их временем получения.
-    expect(m.offers).toHaveLength(2);
+    for (const m of [mergeRates(ok, failed, opts), mergeRates(failed, ok, opts)]) {
+      expect(m.sources.map((x) => [x.runner, x.status, x.lastSuccessAt ?? null])).toEqual([
+        ['github-actions', 'robots-blocked', null],
+        ['pc', 'ok', '2026-09-28T08:00:00Z'],
+      ]);
+      const h = sourceHealth(m.sources, 'a')!;
+      expect(h.primary).toMatchObject({ runner: 'pc', status: 'ok' });
+      expect(h.others).toEqual([expect.objectContaining({ runner: 'github-actions', status: 'robots-blocked' })]);
+      // Курсы с ПК остаются и действуют — неудача в другом месте сбора их не трогает.
+      expect(effectiveAt(m.offers, opts.now)).toHaveLength(2);
+      expect(m.runs.map((r) => r.runner)).toEqual(['pc', 'github-actions']);
+    }
+  });
+
+  it('старый формат: успех ПК, записанный в статус GitHub, очищается', () => {
+    const legacy = fileWith(offersAt('2026-09-28T08:00:00Z', 17.6), 'local', '2026-09-28T08:00:00Z', {
+      runs: [
+        { runner: 'local', startedAt: '2026-09-28T08:00:00Z', finishedAt: '2026-09-28T08:05:00Z' },
+        { runner: 'github-actions', startedAt: '2026-09-28T10:00:00Z', finishedAt: '2026-09-28T10:05:00Z' },
+      ],
+      sources: [
+        { id: 'a', status: 'robots-blocked', lastAttemptAt: '2026-09-28T10:01:00Z', lastSuccessAt: '2026-09-28T08:01:00Z', runner: 'github-actions', offers: 0, suspicious: 0 },
+      ],
+    });
+    const m = mergeRates(legacy, emptyRates(new Date(0)), opts);
+    expect(m.sources[0]!.lastSuccessAt).toBeUndefined();
   });
 
   it('старые предложения и официальные курсы удаляются по сроку хранения', () => {

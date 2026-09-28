@@ -21,6 +21,30 @@ export interface MergeOptions {
   maxRuns?: number;
 }
 
+/** Место сбора: старое 'local' — это ПК. */
+export const normalizeRunner = (r: string) => (r === 'local' ? 'pc' : r);
+
+export const RUNNER_NAMES: Record<string, string> = { pc: 'ПК', 'github-actions': 'GitHub Actions' };
+export const runnerName = (r: string) => RUNNER_NAMES[normalizeRunner(r)] ?? r;
+
+export interface SourceHealth {
+  /** Место сбора с самым свежим успешным сбором (или, если успехов нет, с последней попыткой). */
+  primary: SourceStatus;
+  /** Остальные места сбора. */
+  others: SourceStatus[];
+}
+
+/** Сводка статуса источника по всем местам сбора — для интерфейса. */
+export function sourceHealth(statuses: readonly SourceStatus[], id: string): SourceHealth | null {
+  const list = statuses.filter((s) => s.id === id).map((s) => ({ ...s, runner: normalizeRunner(s.runner) }));
+  if (!list.length) return null;
+  const withSuccess = list.filter((s) => s.lastSuccessAt);
+  const primary = (withSuccess.length ? withSuccess : list).reduce((a, b) =>
+    (withSuccess.length ? (b.lastSuccessAt! > a.lastSuccessAt! ? b : a) : b.lastAttemptAt > a.lastAttemptAt ? b : a),
+  );
+  return { primary, others: list.filter((s) => s !== primary) };
+}
+
 const later = (x: string | undefined, y: string | undefined) => ((x ?? '') >= (y ?? '') ? x : y);
 
 /**
@@ -41,21 +65,25 @@ export function mergeRates(a: RatesFile, b: RatesFile, opts: MergeOptions): Rate
   const all = [...versions.values()];
   const kept = [...effectiveAt(all, opts.now), ...upcomingAfter(all, opts.now)];
 
+  // Статусы — по паре «источник + место сбора»: неудача в GitHub Actions не перебивает успех на ПК.
   const sources = new Map<string, SourceStatus>();
-  for (const s of [...a.sources, ...b.sources]) {
-    const prev = sources.get(s.id);
+  for (const raw of [...a.sources, ...b.sources]) {
+    const s = { ...raw, runner: normalizeRunner(raw.runner) };
+    const key = `${s.id}|${s.runner}`;
+    const prev = sources.get(key);
     if (!prev) {
-      sources.set(s.id, s);
+      sources.set(key, s);
       continue;
     }
     const newer = s.lastAttemptAt >= prev.lastAttemptAt ? s : prev;
     const lastSuccessAt = later(prev.lastSuccessAt, s.lastSuccessAt);
-    sources.set(s.id, { ...newer, ...(lastSuccessAt ? { lastSuccessAt } : {}) });
+    sources.set(key, { ...newer, ...(lastSuccessAt ? { lastSuccessAt } : {}) });
   }
 
   // Список отделений — из файла, где источник успешно собирался позже.
   const branches: Record<string, Branch[]> = {};
-  const successAt = (f: RatesFile, id: string) => f.sources.find((s) => s.id === id)?.lastSuccessAt ?? '';
+  const successAt = (f: RatesFile, id: string) =>
+    f.sources.filter((s) => s.id === id).reduce((m, s) => (s.lastSuccessAt && s.lastSuccessAt > m ? s.lastSuccessAt : m), '');
   for (const id of new Set([...Object.keys(a.branches), ...Object.keys(b.branches)])) {
     const fromA = a.branches[id];
     const fromB = b.branches[id];
@@ -70,9 +98,27 @@ export function mergeRates(a: RatesFile, b: RatesFile, opts: MergeOptions): Rate
   }
 
   const runsMap = new Map<string, RunInfo>();
-  for (const r of [...a.runs, ...b.runs]) runsMap.set(`${r.runner}|${r.startedAt}`, r);
+  for (const raw of [...a.runs, ...b.runs]) {
+    const r = { ...raw, runner: normalizeRunner(raw.runner) };
+    runsMap.set(`${r.runner}|${r.startedAt}`, r);
+  }
 
-  const offersCutoff = new Date(opts.now.getTime() - opts.retainOffersDays * 86_400_000).toISOString();
+  // Старые файлы хранили один статус на источник: успех ПК мог попасть в запись GitHub Actions.
+  // Успех раньше первого известного запуска этого места сбора ему принадлежать не может — убираем.
+  const firstRun = new Map<string, string>();
+  for (const r of runsMap.values()) {
+    const prev = firstRun.get(r.runner);
+    if (!prev || r.startedAt < prev) firstRun.set(r.runner, r.startedAt);
+  }
+  for (const [key, s] of sources) {
+    const first = firstRun.get(s.runner);
+    if (s.lastSuccessAt && first && s.lastSuccessAt < first) {
+      const { lastSuccessAt: _drop, ...rest } = s;
+      sources.set(key, rest);
+    }
+  }
+
+  const offersCutoff =new Date(opts.now.getTime() - opts.retainOffersDays * 86_400_000).toISOString();
   const officialCutoff = new Date(opts.now.getTime() - opts.retainOfficialDays * 86_400_000)
     .toISOString()
     .slice(0, 10);
@@ -85,7 +131,7 @@ export function mergeRates(a: RatesFile, b: RatesFile, opts: MergeOptions): Rate
     runs: [...runsMap.values()]
       .sort((x, y) => x.startedAt.localeCompare(y.startedAt))
       .slice(-(opts.maxRuns ?? 50)),
-    sources: [...sources.values()].sort((x, y) => x.id.localeCompare(y.id)),
+    sources: [...sources.values()].sort((x, y) => x.id.localeCompare(y.id) || x.runner.localeCompare(y.runner)),
     branches,
     official: [...official.values()]
       .filter((r) => r.validFor >= officialCutoff)

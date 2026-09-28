@@ -34,6 +34,7 @@ export interface SourceRunReport {
   suspicious: number;
   reference: number;
   dropped: DroppedQuote[];
+  durationMs: number;
 }
 
 class TimeoutError extends Error {}
@@ -89,7 +90,9 @@ export async function runCollection(opts: RunOptions): Promise<{ file: RatesFile
       offers: 0,
       suspicious: 0,
     };
-    const rep: SourceRunReport = { id: source.id, status: 'error', offers: 0, suspicious: 0, reference: 0, dropped: [] };
+    const rep: SourceRunReport = { id: source.id, status: 'error', offers: 0, suspicious: 0, reference: 0, dropped: [], durationMs: 0 };
+    const t0 = now().getTime();
+    log(`→ ${source.id}${source.collect === 'manual-only' ? ' (только вручную — не собирается)' : ''}`);
 
     if (source.collect === 'manual-only') {
       status.status = 'manual-only';
@@ -101,7 +104,6 @@ export async function runCollection(opts: RunOptions): Promise<{ file: RatesFile
         status.message = `Адаптер «${source.adapter ?? '—'}» не реализован`;
       } else {
         try {
-          log(`→ ${source.id}`);
           const out: AdapterOutput = await withTimeout(
             adapter({ source, http: opts.http, now, log: (m) => log(`  [${source.id}] ${m}`) }),
             opts.settings.sourceTimeoutMs,
@@ -155,6 +157,7 @@ export async function runCollection(opts: RunOptions): Promise<{ file: RatesFile
         }
       }
     }
+    rep.durationMs = now().getTime() - t0;
     rep.status = status.status;
     rep.offers = status.offers;
     rep.suspicious = status.suspicious;

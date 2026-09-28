@@ -1,7 +1,7 @@
-import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
+import { appendFile, mkdir, readFile, rename, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { parseArgs } from 'node:util';
-import { applyRegistry, emptyRates, mergeRates } from '../core/merge';
+import { applyRegistry, emptyRates, mergeRates, normalizeRunner, runnerName } from '../core/merge';
 import { FLAG_LABELS, findRoutes } from '../core/routes';
 import { ratesFileSchema } from '../core/schema';
 import type { Channel } from '../core/types';
@@ -10,7 +10,7 @@ import { adapters } from './adapters/index';
 import { loadConfig, type ProjectConfig } from './config';
 import { RecordingHttp } from './fixtures';
 import { PoliteHttp } from './http';
-import { runCollection } from './run';
+import { runCollection, type SourceRunReport } from './run';
 
 const USAGE = `Использование:
   npm run collect -- [--only id1,id2] [--out data/rates.json] [--runner имя] [--config config]
@@ -35,6 +35,10 @@ async function readRates(path: string): Promise<RatesFile | undefined> {
   return parsed.data as RatesFile;
 }
 
+/** Метка времени для строк лога: местное время Кишинёва/Тирасполя. */
+const clock = new Intl.DateTimeFormat('ru-RU', { timeZone: 'Europe/Chisinau', hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23' });
+const stamp = (m: string) => `[${clock.format(new Date())}] ${m}`;
+
 async function writeAtomic(path: string, data: unknown) {
   await mkdir(dirname(path), { recursive: true });
   const tmp = `${path}.tmp`;
@@ -49,6 +53,32 @@ function finalize(cfg: ProjectConfig, a: RatesFile, b: RatesFile): RatesFile {
     retainOfficialDays: cfg.settings.retainOfficialDays,
   });
   return applyRegistry(merged, cfg.sources);
+}
+
+/** Таблица «Итог» в лог и, в GitHub Actions, в сводку шага (GITHUB_STEP_SUMMARY). */
+async function printSummary(report: SourceRunReport[], runner: string, out: string) {
+  const sec = (ms: number) => `${Math.round(ms / 1000)} с`;
+  console.log(stamp(`Итог (${runnerName(runner)}):`));
+  for (const r of report) {
+    const counts = r.offers ? ` предложений ${r.offers}, подозрительных ${r.suspicious}, справочных ${r.reference}` : '';
+    console.log(`  ${r.status.padEnd(15)} ${r.id.padEnd(18)} ${sec(r.durationMs).padStart(5)}${counts}${r.message ? ` — ${r.message}` : ''}`);
+  }
+  console.log(stamp(`Записано: ${out}`));
+
+  const summaryFile = process.env.GITHUB_STEP_SUMMARY;
+  if (!summaryFile) return;
+  const cell = (s: string) => s.replace(/\|/g, '\\|').replace(/\s+/g, ' ');
+  const lines = [
+    `### Итог сбора (${runnerName(runner)})`,
+    '',
+    '| Источник | Статус | Время | Предложений | Подозрительных | Справочных | Сообщение |',
+    '|---|---|---:|---:|---:|---:|---|',
+    ...report.map(
+      (r) => `| ${r.id} | ${r.status} | ${sec(r.durationMs)} | ${r.offers} | ${r.suspicious} | ${r.reference} | ${cell(r.message ?? '')} |`,
+    ),
+    '',
+  ];
+  await appendFile(summaryFile, lines.join('\n'), 'utf8');
 }
 
 async function main() {
@@ -78,10 +108,11 @@ async function main() {
   const out = resolve(values.out!);
 
   if (command === 'collect') {
-    const runner = values.runner ?? (process.env.GITHUB_ACTIONS ? 'github-actions' : 'local');
+    const runner = normalizeRunner(values.runner ?? (process.env.GITHUB_ACTIONS ? 'github-actions' : 'pc'));
     const previous = await readRates(out);
-    const http = new PoliteHttp(cfg.settings.http, { log: (m) => console.log(`  http: ${m}`) });
+    const http = new PoliteHttp(cfg.settings.http, { log: (m) => console.log(stamp(`  http: ${m}`)) });
     const only = values.only?.split(',').map((s) => s.trim()).filter(Boolean);
+    console.log(stamp(`Сбор курсов, место сбора: ${runnerName(runner)}`));
     if (only) {
       const unknown = only.filter((id) => !cfg.sources.some((s) => s.id === id));
       if (unknown.length) throw new Error(`Неизвестные источники: ${unknown.join(', ')}`);
@@ -94,16 +125,10 @@ async function main() {
       runner,
       ...(previous ? { previous } : {}),
       ...(only ? { only } : {}),
-      log: (m) => console.log(m),
+      log: (m) => console.log(stamp(m)),
     });
     await writeAtomic(out, finalize(cfg, previous ?? emptyRates(new Date(0)), file));
-
-    console.log('\nИтог:');
-    for (const r of report) {
-      const counts = r.offers ? ` предложений ${r.offers}, подозрительных ${r.suspicious}, справочных ${r.reference}` : '';
-      console.log(`  ${r.status.padEnd(15)} ${r.id.padEnd(18)}${counts}${r.message ? ` — ${r.message}` : ''}`);
-    }
-    console.log(`\nЗаписано: ${out}`);
+    await printSummary(report, runner, out);
     return;
   }
 
