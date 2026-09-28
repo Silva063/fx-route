@@ -1,7 +1,9 @@
 import { useMemo, useState } from 'preact/hooks';
 import type { Channel } from '../../src/core/types';
 import { CHANNEL_NAMES } from './format';
+import { fmtAge, fmtDateTime } from './format';
 import { cityOf, type AppState } from './state';
+import { BUILD, checkForUpdate, applyUpdate, useUpdateState } from './update';
 
 const CHANNELS: Channel[] = ['cash', 'card', 'online'];
 
@@ -13,6 +15,7 @@ export function SettingsView({ s }: { s: AppState }) {
       <Branches s={s} />
       <Other s={s} />
       <Rules s={s} />
+      <About />
     </>
   );
 }
@@ -178,6 +181,42 @@ function Rules({ s }: { s: AppState }) {
         )}
       </ul>
       {unverifiedFees.length > 0 && <p class="small muted">Непроверенные правила применяются как осторожная оценка.</p>}
+    </section>
+  );
+}
+
+function About() {
+  const u = useUpdateState();
+  const commitUrl = BUILD.repo && /^[0-9a-f]{7}$/.test(BUILD.commit) ? `https://github.com/${BUILD.repo}/commit/${BUILD.commit}` : '';
+  return (
+    <section class="card">
+      <h2 class="h3">О приложении</h2>
+      <ul class="list small">
+        <li>
+          Версия <strong>{BUILD.version}</strong>, коммит{' '}
+          {commitUrl ? <a href={commitUrl} target="_blank" rel="noopener noreferrer"><code>{BUILD.commit}</code></a> : <code>{BUILD.commit}</code>}
+        </li>
+        <li>Сборка: {fmtDateTime(BUILD.builtAt)} ({fmtAge(BUILD.builtAt)})</li>
+        <li>
+          {u.unsupported
+            ? 'Обновления: service worker недоступен в этом браузере.'
+            : u.needRefresh
+              ? 'Доступна новая версия.'
+              : u.checking
+                ? 'Проверяю обновления…'
+                : u.lastCheck
+                  ? `Установлена последняя версия (проверено ${fmtDateTime(u.lastCheck)}).`
+                  : 'Обновления ещё не проверялись.'}
+          {u.error && <div class="error-text">Не удалось проверить: {u.error}</div>}
+        </li>
+      </ul>
+      <div class="actions">
+        {u.needRefresh ? (
+          <button class="primary" onClick={applyUpdate}>Обновить</button>
+        ) : (
+          <button onClick={() => void checkForUpdate()} disabled={u.checking || u.unsupported}>Проверить обновления</button>
+        )}
+      </div>
     </section>
   );
 }

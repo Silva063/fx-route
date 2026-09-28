@@ -7,6 +7,19 @@ import { RouteView } from './route-view';
 import { SettingsView } from './settings-view';
 import { SourcesView } from './sources-view';
 import type { AppState } from './state';
+import { applyUpdate, useUpdateState } from './update';
+
+/** Плашка «Доступна новая версия» — на всех вкладках. */
+function UpdateBanner() {
+  const u = useUpdateState();
+  if (!u.needRefresh) return null;
+  return (
+    <div class="update-banner" role="status">
+      <span>Доступна новая версия</span>
+      <button class="primary" onClick={applyUpdate}>Обновить</button>
+    </div>
+  );
+}
 
 type Tab = 'route' | 'sources' | 'manual' | 'settings';
 const TABS: [Tab, string, string][] = [
@@ -74,6 +87,7 @@ export function App() {
 
   return (
     <>
+      <UpdateBanner />
       <main class="page">
         {tab === 'route' && <RouteView s={state} goTo={setTab} />}
         {tab === 'sources' && <SourcesView s={state} />}

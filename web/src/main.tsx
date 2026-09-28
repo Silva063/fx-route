@@ -1,9 +1,9 @@
 import { render } from 'preact';
-import { registerSW } from 'virtual:pwa-register';
 import { App } from './app';
 import './style.css';
+import { initUpdates } from './update';
 
 render(<App />, document.getElementById('app')!);
 
-// Service worker: приложение работает офлайн на последних сохранённых курсах.
-if ('serviceWorker' in navigator) registerSW({ immediate: true });
+// Service worker: офлайн-работа и проверка новой версии (плашка «Доступна новая версия»).
+initUpdates();
