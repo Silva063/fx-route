@@ -1,0 +1,15 @@
+{
+  "source": "otpbank",
+  "recordedAt": "2026-09-28T17:20:51.742Z",
+  "entries": [
+    {
+      "method": "GET",
+      "url": "https://www.otpbank.md/exchange",
+      "file": "001.html",
+      "status": 200,
+      "finalUrl": "https://www.otpbank.md/exchange",
+      "fetchedAt": "2026-09-28T17:20:55.465Z",
+      "contentType": "text/html; charset=UTF-8"
+    }
+  ]
+}

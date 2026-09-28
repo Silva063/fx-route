@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<style>
+.del { display: none; }
+.del:not(:checked) + label + * { display: none; } /* фактически нужна только одна строка */
+
+/* вид CSS кнопки */
+.del:not(:checked) + label,
+.del:checked + label {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 2px;
+  color: #fff;
+  background:  #b08e6d ; /* #2E8B57 */
+  cursor: pointer;
+}
+.del:not(:checked) + label + * { display: none; }
+  background: #e36443;
+}
+</style>
+    ﻿<head>
+
+	<meta charset="utf-8" />
+	<title>Банк Приднестровья</title>
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="google-site-verification" content="QedvbmGFprPWcrPOv7PMgFqqhqSVEEYF5CBjfajW6XU" />
+    <script type="text/javascript" src="js/jquery-1.11.2.js"></script> 	
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="js/style.css" />
+    <link rel="stylesheet" href="styles/color.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link href="styles/default.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link href="cssmenu/style.css" rel="stylesheet" type="text/css" />
+    <link type="text/css" rel="stylesheet" href="styles/st.css" />
+    <link rel="stylesheet" href="styles/lightbox.css" media="screen"/>
+	<link rel="alternate" type="application/rss+xml" title="RSS - Банк Приднестровья" href="http://www.cbpmr.net/rss.xml" />
+<style>
+		.string{
+			max-width:1120px;
+			height:30px;
+			margin:0px auto;
+			line-height:28px;
+			padding: 0 0px;
+			border-radius:4px;
+			box-shadow:0 1px 2px #777;
+			-moz-border-radius:4px;
+			-webkit-border-radius:4px;
+			background: rgb(238,238,238);
+			background: -moz-linear-gradient(top,  rgba(238,238,238,1) 0%, rgba(204,204,204,1) 100%);
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(238,238,238,1)), color-stop(100%,rgba(204,204,204,1)));
+			background: -webkit-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%);
+			background: -o-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%);
+			background: -ms-linear-gradient(top,  rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%);
+			background: linear-gradient(to bottom,  rgba(238,238,238,1) 0%,rgba(204,204,204,1) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#cccccc',GradientType=0 );
+		}
+			
+		.bkk{
+background: #36383a;
+
+}
+	</style>
+    	
+    <script type="text/javascript">
+        $(document).ready(function () {
+			$('#cssmenu > ul > li ul').each(function(index, e){
+				var count = $(e).find('li').length;
+				var content = '<span>'+'</span>';
+				$(e).closest('li').children('a').append(content);
+			});
+			$('#cssmenu ul ul li:odd').addClass('odd');
+			$('#cssmenu ul ul li:even').addClass('even');
+			$('#cssmenu > ul > li > a').click(function() {
+				$('#cssmenu li').removeClass('active');
+				$(this).closest('li').addClass('active');	
+				var checkElement = $(this).next();
+				if((checkElement.is('ul')) && (checkElement.is(':visible'))) {
+					$(this).closest('li').removeClass('active');
+					checkElement.slideUp('normal');
+				}
+				if((checkElement.is('ul')) && (!checkElement.is(':visible'))) {
+					$('#cssmenu ul ul:visible').slideUp('normal');
+					checkElement.slideDown('normal');
+				}
+				if($(this).closest('li').find('ul').children().length == 0) {
+					return true;
+				} else {
+					return false;
+				}
+			});
+        });
+    </script>
+	<script type="text/javascript">
+		$(function() {
+
+			var marquee = $("#marquee"); 
+			marquee.css({"overflow": "hidden", "width": "100%"});
+
+			// оболочка для текста ввиде span (IE не любит дивы с inline-block)
+			marquee.wrapInner("<span>");
+			marquee.find("span").css({ "width": "50%", "display": "inline-block", "text-align":"center" }); 
+			marquee.append(marquee.find("span").clone()); // тут у нас два span с текстом
+
+			marquee.wrapInner("<div>");
+			marquee.find("div").css("width", "200%");
+
+			var reset = function() {
+				$(this).css("margin-left", "0%");
+				$(this).animate({ "margin-left": "-100%" }, 12000, 'linear', reset );
+			};
+
+			reset.call(marquee.find("div"));
+
+		});
+	</script>
+<!--
+
+<script type="text/javascript">
+$(function(){
+$('.fadein img:gt(0)').hide();
+setInterval(function()
+{$('.fadein :first-child').fadeOut(1000).next('img').fadeIn(1000)
+.end().appendTo('.fadein');}, 3000);
+});
+</script>
+
+-->
+
+<script type="text/javascript">
+$(document).ready(function(){
+ 
+$(window).scroll(function(){
+if ($(this).scrollTop() > 100) {
+$('.scrollup').fadeIn();
+} else {
+$('.scrollup').fadeOut();
+}
+});
+ 
+$('.scrollup').click(function(){
+$("html, body").animate({ scrollTop: 0 }, 600);
+return false;
+});
+ 
+});
+</script>
+<style type="text/css">
+
+
+  .spoiler input, .spoiler div  
+   { 
+    display: none; /* Скрываем содержимое */
+
+   }
+   .spoiler label
+{
+cursor: pointer;
+}
+
+   .spoiler label::before 
+   {
+    content: '►'; /* Текст перед заголовком */
+    margin-right: 5px; /* Расстояние до текста */
+
+   }
+   /* Открытый спойлер */
+   .spoiler :checked + label::before { content: '▼'; }
+
+   .spoiler :checked ~ div 
+   {
+    display: block; /* Показываем спойлер */
+    padding: 10px; /* Поля вокруг текста */ 
+   }
+
+.fadein {
+	position: absolute;
+	height: 83px;
+	
+}
+.fadein img {
+position:absolute;
+left:0;
+top:0;
+}
+.boxShadow {
+  width: 100%;
+  max-width: 1120px;
+  margin:0px auto;
+  padding: 1em;
+  text-color: #000;
+  background:#FFF;
+  box-shadow: 0 15px 18px rgba(0, 0, 0, .2);
+  filter: glow(color=#0000ff,strength=4);
+  -moz-border-radius:4px;
+			-webkit-border-radius:4px;
+}
+.boxShadow1 {
+  width: 100%;
+  max-width: 100%;
+  margin:0px auto;
+  padding: 1em;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
+}
+.boxS2 textarea {
+    width: 90%; /* Ширина поля в процентах */
+    height: 100px; /* Высота поля в пикселах */
+    resize: none; /* Запрещаем изменять размер */
+   } 
+.boxShadow2 {
+  width: 100%;
+  max-width: 1120px;
+  margin:0px auto;
+  padding: 0em;
+  background:#FFF;
+  box-shadow: 0 15px 18px rgba(0, 0, 0, .2);
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+}
+.boxShadow5 {
+  width: 100%;
+  max-width: 1120px;
+  margin:10px auto;
+  padding: 1em;
+  background:#FFF;
+  box-shadow: 0 15px 18px rgba(0, 0, 0, .2);
+  -moz-border-radius:4px;
+  -webkit-border-radius:4px;
+}
+.boxbg 
+{
+/* new color scheme #382f2d  #d8d2cb */
+    background: #d8d2cb; /* Для старых браузров OLD - scheme 3CB371 */
+   /* background: linear-gradient(to bottom, #d8d2cb 0%, #fff 100%); */
+	/*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d8d2cb', endColorstr=' #fff');*/
+    padding: 8px;
+	text-align: center;
+   
+}
+
+.boxShadow3 {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0px auto;
+  padding: 1em;
+
+  box-shadow: 0 15px 18px rgba(0, 0, 0, .2);
+  -moz-border-radius:4px;
+			-webkit-border-radius:4px;
+			
+}
+.boxShadow4 {
+  width: 100%;
+  max-width: 1120px;
+  margin:-10px auto;
+ 
+ 
+}				
+.boxShadow3 a {
+color: black;
+}
+.boxShadow textarea {
+    width: 60%; /* Ширина поля в процентах */
+    height: 95px; /* Высота поля в пикселах */
+    resize: none; /* Запрещаем изменять размер */
+   } 
+.boxShadow3 a:hover {
+color: #b08e6d; /* OLD COLOR OF RUNNING STRING #3CB371*/
+}
+.boxS a {
+color: black;
+}
+.string a {
+color: #b08e6d; /* OLD COLOR OF RUNNING STRING #3CB371*/
+}
+.string a:hover {
+color: black;
+}
+.boxShadow a {
+color: black;
+}
+.boxS {
+margin: 15px;
+}
+
+.boxS a:hover {
+color: #b08e6d;
+}
+
+.boxS table{
+max-width: 600px;
+cellspacing: 0;
+
+}
+.boxShadow3 table{
+table-layout: fixed;
+max-width: 900px;
+cellspacing: 0;
+
+}
+.boxShadow2 table{
+table-layout: fixed;
+cellspacing: 0;
+
+}
+
+.boxShadow4 table{
+width: 700px;
+text-align: center;
+}
+
+.inform td{
+width: 10px;
+height: 20px;
+cellspacing: 0;
+text-align: center;
+}
+.boxShadow5 table{
+width: 800px;
+cellspacing: 0;
+text-align: center;
+}
+.boxShad table{
+width: 800px;
+cellspacing: 0;
+text-align: left;
+}
+
+.boxShadow6 {
+  width: 100%;
+  max-width: 1122px;
+  margin: 0px auto;
+  padding: 0em;
+  -moz-border-radius:4px;
+			-webkit-border-radius:4px;
+}
+.scrollup{
+width:40px;
+height:40px;
+opacity:0.3;
+position:fixed;
+bottom:10px;
+right:10px;
+display:none;
+text-indent:-9999px;
+background: url('images/icon_top.png') no-repeat;
+}
+.boxShadow8 {
+  width: 80%;
+  max-width: 550px;
+  margin: 2em auto;
+  padding: 1em;
+  box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+}
+.simple-little-table {
+	font-family:Arial, Helvetica, sans-serif;
+	color:#666;
+	font-size:12px;
+	text-shadow: 1px 1px 0px #fff;
+	background:#eaebec;
+	margin:5px;
+	border:#ccc 1px solid;
+	border-collapse:separate;
+ 
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+ 
+	-moz-box-shadow: 0 1px 2px #d1d1d1;
+	-webkit-box-shadow: 0 1px 2px #d1d1d1;
+	box-shadow: 0 1px 2px #d1d1d1;
+}
+ 
+.simple-little-table th {
+	font-weight:bold;
+	padding:2px 2px 2px 2px;
+	border-top:1px solid #fafafa;
+	border-bottom:1px solid #e0e0e0;
+ 
+	background: #ededed;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
+	background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
+}
+.simple-little-table th:first-child{
+	text-align: center;
+	padding-left:5px;
+}
+.simple-little-table tr:first-child th:first-child{
+	-moz-border-radius-topleft:3px;
+	-webkit-border-top-left-radius:3px;
+	border-top-left-radius:3px;
+}
+.simple-little-table tr:first-child th:last-child{
+	-moz-border-radius-topright:3px;
+	-webkit-border-top-right-radius:3px;
+	border-top-right-radius:3px;
+}
+.simple-little-table tr{
+	text-align: center;
+	padding-left:5px;
+}
+.simple-little-table tr td:first-child{
+	text-align: center;
+	padding-left:2px;
+	border-left: 0;
+}
+.simple-little-table tr td {
+	
+	border-top: 1px solid #ffffff;
+	border-bottom:1px solid #e0e0e0;
+	border-left: 1px solid #e0e0e0;
+	
+	background: #fafafa;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
+	background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
+}
+.simple-little-table tr:nth-child(even) td{
+	background: #f6f6f6;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f6f6f6));
+	background: -moz-linear-gradient(top,  #f8f8f8,  #f6f6f6);
+}
+.simple-little-table tr:last-child td{
+	border-bottom:0;
+}
+.simple-little-table tr:last-child td:first-child{
+	-moz-border-radius-bottomleft:3px;
+	-webkit-border-bottom-left-radius:3px;
+	border-bottom-left-radius:3px;
+}
+.simple-little-table tr:last-child td:last-child{
+	-moz-border-radius-bottomright:3px;
+	-webkit-border-bottom-right-radius:3px;
+	border-bottom-right-radius:3px;
+}
+.simple-little-table tr:hover td{
+	background: #f2f2f2;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
+	background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);	
+}
+ 
+.simple-little-table a:link {
+	color: #666;
+	font-weight: bold;
+	text-decoration:none;
+}
+.simple-little-table a:visited {
+	color: #999999;
+	font-weight:bold;
+	text-decoration:none;
+}
+.simple-little-table a:active,
+.simple-little-table a:hover {
+	color: #bd5a35;
+	text-decoration:underline;
+}
+.image {
+ overflow:hidden;
+
+ }
+.image img {
+ -moz-transition: all 0.2s ease-out;
+ -o-transition: all 0.2s ease-out;
+ -webkit-transition: all 0.2s ease-out;
+ }
+ 
+.image img:hover{
+ position: static;
+ -webkit-transform: scale(1.4);
+ -moz-transform: scale(1.4);
+ -o-transform: scale(1.4);
+ }
+
+
+</style>
+</head><body class="bkk">
+ 
+<tr>
+<div id="bodychild">
+	<div id="outercontainer" >
+    
+        <!-- HEADER -->
+        
+			<div class="boxShadow6">
+            <div class="fadein"></a>
+                    </div>
+            <header id="top" class="row">
+			<br>
+              <div id="topleft" class="six columns">
+			  <!--<a href="/"><img src="images/logo_ban.png" alt=""/>-->
+			  
+              <a href='/'><img src='images/logo_ban.png' alt='Приднестровский республиканский банк' title='Приднестровский республиканский банк'/></a>               
+              </div><br> 
+              <div id="topright" class="six columns" >
+                  <ul class="sn">
+                   
+<li><a href='https://www.youtube.com/channel/UC_D-wxANGrlLHPfRdROWDPg' title='YOUTUBE КАНАЛ' target='_blank'><span class='icon-img facebook'></span></a></li>
+<li><a href='mail.php' title='Обратная связь'><span class='icon-img instagram'></span></a></li>                 
+<li><a href='?lang=ru'><span class='icon-img twitter' style='filter: alpha(Opacity=25);opacity: 0.25;'></span></a></li>
+<li><a href='?lang=en'><span class='icon-img google'></span></a></li>			 </ul>
+              </div>
+            </header>
+            </div>
+		</div>
+<!-- HEADER -->
+        ﻿
+<div class="boxShadow4">
+            	<div class="row">	
+                    <nav id="nav-wrap">
+                        <ul id="topnav" class="sf-menu">
+                        <li><a href='/'>О банке</a>
+<ul><li><li><a href='content.php?id=124'>РУКОВОДСТВО
+</a></li><li><a href='content.php?id=2'>Правовой статус и функции банка
+</a></li><li><a href='content.php?id=141'>Тарифы ПРБ
+</a></li><li><a href='content.php?id=140'>Справочник счетов ТНИ
+</a></li><li><a href='content.php?id=142'>Агентство по оздоровлению банковской системы реализует
+</a></li><li><a href='content.php?id=112'>Отчётность банка
+</a></li><li><a href='content.php?id=134'>Издания
+</a></li><li><a href='content.php?id=1'>История банка
+</a></li><li><a href='content.php?id=129'>Вакансии
+</a></li><li><a href='content.php?id=4'>Контактная информация
+</a></li><li><a href='content.php?id=148'>Интернет-приёмная
+</a></li><li><a href='content.php?id=143'>Информация о ПМР
+</a></li><li><a href='content.php?id=144'>Ссылки
+</a></li><li><a href='content.php?id=158'>Стандарт EDoc и шаблоны в формате XSLT
+</a></li><li><a href='content.php?id=187'>Удостоверяющий центр ПРБ
+</a></li><li><a href='content.php?id=190'>Противодействие коррупции
+</a></li></li></ul>
+</li><li><a href='#'>Монетарная сфера</a>
+<ul><li><li><a href=' content.php?id=32'>Денежно-кредитная политика
+</a></li><li><a href='content.php?id=38'>Индикаторы валютного рынка
+</a></li><li><a href='content.php?id=40'>Денежный обзор
+</a></li></li></ul>
+</li><li><a href='#'>Законодательство</a>
+<ul><li><li><a href='content.php?id=5'>Законодательство
+</a></li><li><a href='content.php?id=6'>Проекты нормативных актов
+</a></li><li><a href='norm.php'> Нормативные документы
+</a></li><li><a href='content.php?id=8'>Нормативные правовые акты ПРБ, прошедшие процедуру гос.регистрации, но не вступившие в силу
+</a></li><li><a href='content.php?id=193'>Текущие редакции нормативных актов ПРБ не вступившие в силу
+</a></li></li></ul>
+</li><li><a href='#'>Финансовая система</a>
+<ul><li><li><a href='content.php?id=153'>Финансовая грамотность
+</a></li><li><a href='content.php?id=197'>Среднерыночные значения полной стоимости потребительского кредита (займа)
+</a></li><li><a href='content.php?id=9'>Информация о коммерческих банках ПМР
+</a></li><li><a href='banks.php'>Показатели деятельности банков ПМР
+</a></li><li><a href='content.php?id=10'>Процентные ставки
+</a></li><li><a href='content.php?id=11'>Сводные данные по банковской системе
+</a></li><li><a href='content.php?id=128'>Информация о субъектах страхового дела и страховых объединениях ПМР
+</a></li><li><a href='soinfo.php'>Показатели деятельности страховых организаций ПМР
+</a></li><li><a href='content.php?id=161'>Информация о микрофинансовых организациях
+</a></li></li></ul>
+</li><li><a href='#'>Макроэкономика</a>
+<ul><li><li><a href='content.php?id=13'>Основные макроэкономические показатели
+</a></li><li><a href='content.php?id=14'>Индекс цен
+</a></li><li><a href='content.php?id=76'>Платёжый баланс
+</a></li><li><a href='content.php?id=15'>Ежеквартальный обзор инфляции
+</a></li><li><a href='content.php?id=110'>Денежные переводы
+</a></li><li><a href='content.php?id=133'>Информационно-аналитические материалы
+</a></li></li></ul>
+</li><li><a href='#'>Противодействие отмыванию денег </a>
+<ul><li><li><a href='content.php?id=78'>Законодательство
+</a></li><li><a href='content.php?id=19'>Информационные письма
+</a></li><li><a href='content.php?id=20'>Перечень террористов и экстремистов
+</a></li><li><a href='content.php?id=21'>Информация о размере РУ МЗП
+</a></li></li></ul>
+</li><li><a href='#'>Банкноты и монеты</a>
+<ul><li><li><a href=' content.php?id=79'>Символ приднестровского рубля
+</a></li><li><a href='content.php?id=22'>Банкноты
+</a></li><li><a href='content.php?id=23'>Разменная монета
+</a></li><li><a href='content.php?id=26'>Монеты из композитных материалов
+</a></li><li><a href='content.php?id=51'>Памятные и юбилейные монеты из драгоценных металлов
+</a></li><li><a href='content.php?id=27'>Памятные монеты из недрагоценных металлов
+</a></li><li><a href='content.php?id=25'>Памятные банкноты
+</a></li><li><a href='content.php?id=30'>Буклеты ПРБ
+</a></li><li><a href='content.php?id=43'>История денежного обращения ПМР
+</a></li><li><a href='content.php?id=194'>Структура каталожного номера памятных монет Приднестровского республиканского банка
+</a></li></li></ul>
+</li>                            </li></ul>                            
+                        </li></ul><!-- topnav -->                     
+                        <div class="clear"></div>
+                    </nav><!-- nav -->	                  
+                </section>
+                </div>
+            </div>
+        <br>
+       
+  
+      
+		              <div class="string" >
+		<marquee onmouseover="this.stop()" onmouseout="this.start()"><h8><p><a href="/data/onegdkp_2026.pdf" style="font-size: 14px;">Основные направления единой государственной денежно-кредитной политики&nbsp;на 2026 год</a></p>
+</h8></marquee>
+            
+            </div>
+       <div class="boxShadow2">
+        <table>
+        <tr>
+        <td >
+        <div id='cssmenu' style='display:none'>
+<ul>
+<li><a href=''><h9>Валютная амнистия</a></h9>
+<ul><li><li><a href=content.php?id=121>Валютная амнистия
+</a></li></li></ul>
+</li><li><a href='#'><h9>Противодействие отмыванию денег </a></h9>
+<ul><li><li><a href=content.php?id=78>Законодательство
+</a></li><li><a href=content.php?id=19>Информационные письма
+</a></li><li><a href=content.php?id=20>Перечень террористов и экстремистов
+</a></li><li><a href=content.php?id=21>Информация о размере РУ МЗП
+</a></li></li></ul>
+</li><li><a href='#'><h9>Издания ПРБ</a></h9>
+<ul><li><li><a href=content.php?id=28>Вестник Приднестровского республиканского банка
+</a></li><li><a href=content.php?id=29>Каталоги ПРБ
+</a></li><li><a href=content.php?id=30>Буклеты ПРБ
+</a></li><li><a href=content.php?id=31>Книга и альбом 
+</a></li></li></ul>
+</li><li><a href='#'><h9>Видео/фото</a></h9>
+<ul><li><li><a href=/video.php>Видео
+</a></li><li><a href=/photo.php>Фото
+</a></li></li></ul>
+</li><li><a href='#'><h9>Информация о ПМР</a></h9>
+<ul><li><li><a href= content.php?id=33>Информация о ПМР
+</a></li></li></ul>
+</li><li><a href='content.php?id=18'><h9>Справочник счетов ТНИ</a></h9>
+<ul><li><li><a href=content.php?id=18>Справочник счетов ТНИ
+</a></li></li></ul>
+</li><li><a href=''><h9>Ссылки</a></h9>
+<ul><li><li><a href=content.php?id=102>Коммерческие банки Приднестровья
+</a></li><li><a href=content.php?id=103>Банки других стран
+</a></li><li><a href=http://old.cbpmr.net>Старая версия сайта ПРБ
+</a></li></li></ul>
+</li><li><a href='#'><h9>Агентство по оздоровлению банковской системы реализует</a></h9>
+<ul><li><li><a href=content.php?id=130>Агентство по оздоровлению банковской системы реализует
+</a></li></li></ul>
+</li>		</ul>
+	</div><br>
+	   <div class='boxbg'><a href='https://www.youtube.com/channel/UC_D-wxANGrlLHPfRdROWDPg' target='_blank'><h8>Канал в Youtube</h8></a></div><div class='boxShadow1' class='boxS'><h9><iframe width="250" height="170" src="https://www.youtube.com/embed/6Ov0cUuZF4Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></h9>
+</div><br><a href='/content.php?id=28'><div class='boxbg'><h8>Вестник ПРБ</h8></div><div class='boxShadow1' align='center'>
+<img src='data/obl_vest_2_2018_1.bmp' alt='Вестник ПРБ' border='0' width='150'></a>
+</div><br><div class='boxbg'><h8>Официальный курс</h8></div><div class='boxShadow1'><div align='center'><h8>c&nbsp;&nbsp;29.09.2026</h8></div><table class='simple-little-table' cellspacing='0'><tr>
+<th>&nbsp;Флаг&nbsp;</th>
+<th>&nbsp;Валюта&nbsp;&nbsp;</th>
+<th>&nbsp;Курс&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+</tr><tr><td align='center'><img src="images/png/us.png"/></td><td align='center'><h12 >USD</h12></td>
+							<td width='10%'><h12>16.1000</h12></td>
+							</tr><tr><td align='center'><img src="images/png/euro.png" /></td><td align='center'><h12 >EUR</h12></td>
+							<td width='10%'><h12>18.3105</h12></td>
+							</tr><tr><td align='center'><img src="images/png/ru.png" alt="" /></td><td align='center'><h12 >RUB</h12></td>
+							<td width='10%'><h12>0.1873</h12></td>
+							</tr><tr><td align='center'><img src="images/png/kt.png" alt="" /></td><td align='center'><h12 >CNY</h12></td>
+							<td width='10%'><h12>23.9291</h12></td>
+							</tr><tr><td align='center'><img src="images/png/md.png" alt="" /></td><td align='center'><h12 >MDL</h12></td>
+							<td width='10%'><h12>0.9068</h12></td>
+							</tr><tr><td align='center'><img src="images/png/ua.png" alt="" /></td><td align='center'><h12 >UAH</h12></td>
+							<td width='10%'><h12>0.3590</h12></td>
+							</tr>
+</table>
+<a href='kursval.php?lang=ru'><br><h5>Подробнее...</h5></a>
+<a href='informer.php'><h5>Информеры...</h5></a>
+</div><br><div class='boxbg'><h8>Драгоценные металлы</h8></div><div class='boxShadow1'><div align='center'>
+<table class='simple-little-table' cellspacing='0'>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Металлы&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Цены&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><div align='center'><h8>c&nbsp;&nbsp;29.09.2026</h8></div></table></div>
+<a href='kursm.php?lang=ru'><br><h5>Подробнее...</h5></a>
+<a href='informer.php'><h5>Информеры...</h5></a>
+</div><br><div class='boxbg'><h8>Поиск по сайту</h8></div><div class='boxShadow1'><div class="ya-site-form ya-site-form_inited_no" onclick="return {'action':'http://prbank.idknet.com/search.php','arrow':false,'bg':'transparent','fontsize':12,'fg':'#000000','language':'ru','logo':'rb','publicname':'Yandex Site Search #2215013','suggest':true,'target':'_self','tld':'ru','type':3,'usebigdictionary':true,'searchid':2215013,'webopt':true,'websearch':false,'input_fg':'#000000','input_bg':'#ffffff','input_fontStyle':'normal','input_fontWeight':'normal','input_placeholder':'','input_placeholderColor':'#000000','input_borderColor':'#7f9db9'}"><form action="http://yandex.ru/sitesearch" method="get" target="_self"><input type="hidden" name="searchid" value="2215013"/><input type="hidden" name="l10n" value="ru"/><input type="hidden" name="reqenc" value=""/><input type="search" name="text" value=""/><input type="submit" value="Найти"/></form></div><style type="text/css">.ya-page_js_yes .ya-site-form_inited_no { display: none; }</style><script type="text/javascript">(function(w,d,c){var s=d.createElement('script'),h=d.getElementsByTagName('script')[0],e=d.documentElement;if((' '+e.className+' ').indexOf(' ya-page_js_yes ')===-1){e.className+=' ya-page_js_yes';}s.type='text/javascript';s.async=true;s.charset='utf-8';s.src=(d.location.protocol==='https:'?'https:':'http:')+'//site.yandex.net/v2.0/js/all.js';h.parentNode.insertBefore(s,h);(w[c]||(w[c]=[])).push(function(){Ya.Site.Form.init()})})(window,document,'yandex_site_callbacks');</script>
+</div><br>        </td>
+        <td width="90%" >
+        <div class='boxbg'><h8>Официальные курсы валют</h8></div><div align='center' class='boxShadow3'><br><h8>Курс валют c&nbsp;&nbsp;29.09.2026</h8><br><br>
+<table class='simple-little-table' cellspacing='0'><tr>
+<th>&nbsp;Код&nbsp;</th>
+<th>&nbsp;Флаг&nbsp;</th>
+<th>&nbsp;Валюта&nbsp;</th>
+<th>&nbsp;Букв. код&nbsp;</th>
+<th>&nbsp;Единиц&nbsp;</th>
+<th>&nbsp;Курс&nbsp;</th>
+</tr><tr width='10%'><td><h12>840</h12></td><td><img src="images/png/us.png"/></td><td><h12>Доллар США</h12></td><td><h12>USD</h12></td>
+							<td width='10%'><h12>1</h12></td><td><h12>16.1000</h12></td>
+							</tr><tr width='10%'><td><h12>978</h12></td><td><img src="images/png/euro.png" /></td><td><h12>Евро</h12></td><td><h12>EUR</h12></td>
+							<td width='10%'><h12>1</h12></td><td><h12>18.3105</h12></td>
+							</tr><tr width='10%'><td><h12>643</h12></td><td><img src="images/png/ru.png" alt="" /></td><td><h12>Российский рубль</h12></td><td><h12>RUB</h12></td>
+							<td width='10%'><h12>1</h12></td><td><h12>0.1873</h12></td>
+							</tr><tr width='10%'><td><h12>156</h12></td><td><img src="images/png/kt.png" alt="" /></td><td><h12>Юань</h12></td><td><h12>CNY</h12></td>
+							<td width='10%'><h12>10</h12></td><td><h12>23.9291</h12></td>
+							</tr><tr width='10%'><td><h12>498</h12></td><td><img src="images/png/md.png" alt="" /></td><td><h12>Молдавский лей</h12></td><td><h12>MDL</h12></td>
+							<td width='10%'><h12>1</h12></td><td><h12>0.9068</h12></td>
+							</tr><tr width='10%'><td><h12>980</h12></td><td><img src="images/png/ua.png" alt="" /></td><td><h12>Гривна</h12></td><td><h12>UAH</h12></td>
+							<td width='10%'><h12>1</h12></td><td><h12>0.3590</h12></td>
+							</tr><tr width='10%'><td><h12>826</h12></td><td><img src="images/png/uk.png" alt="" /></td><td><h12>Фунт стерлингов </h12></td><td><h12>GBP</h12></td>
+							<td width='10%'><h12>1</h12></td><td><h12>21.2842</h12></td>
+							</tr><tr width='10%'><td><h12>985</h12></td><td><img src="images/png/pl.png" alt="" /></td><td><h12>Злотый</h12></td><td><h12>PLN</h12></td>
+							<td width='10%'><h12>10</h12></td><td><h12>41.9227</h12></td>
+							</tr><tr width='10%'><td><h12>578</h12></td><td><img src="images/png/no.png" alt="" /></td><td><h12>Норвежская крона</h12></td><td><h12>NOK</h12></td>
+							<td width='10%'><h12>10</h12></td><td><h12>16.9616</h12></td>
+							</tr><tr width='10%'><td><h12>348</h12></td><td><img src="images/png/hu.png" alt="" /></td><td><h12>Форинт</h12></td><td><h12>HUF</h12></td>
+							<td width='10%'><h12>100</h12></td><td><h12>5.0330</h12></td>
+							</tr><tr width='10%'><td><h12>946</h12></td><td><img src="images/png/ro.png" alt="" /></td><td><h12>Румынский лей</h12></td><td><h12>RON</h12></td>
+							<td width='10%'><h12>1</h12></td><td><h12>3.4781</h12></td>
+							</tr><tr width='10%'><td><h12>376</h12></td><td><img src="images/png/is.png" alt="" /></td><td><h12>Новый израильский шекель</h12></td><td><h12>ILS</h12></td>
+							<td width='10%'><h12>1</h12></td><td><h12>5.3040</h12></td>
+							</tr><tr width='10%'><td><h12>949</h12></td><td><img src="images/png/tu.png" alt="" /></td><td><h12>Турецкая лира</h12></td><td><h12>TRY</h12></td>
+							<td width='10%'><h12>1</h12></td><td><h12>0.3298</h12></td>
+							</tr><tr width='10%'><td><h12>392</h12></td><td><img src="images/png/ja.png" alt="" /></td><td><h12>Йена</h12></td><td><h12>JPY</h12></td>
+							<td width='10%'><h12>100</h12></td><td><h12>10.1430</h12></td>
+							</tr><tr width='10%'><td><h12>208</h12></td><td><img src="images/png/dk.png" alt= "" /></td><td><h12>Датская крона</h12></td><td><h12>DKK</h12></td>
+							<td width='10%'><h12>10</h12></td><td><h12>24.4808</h12></td>
+							</tr><tr width='10%'><td><h12>756</h12></td><td><img src="images/png/ch.png" alt="" /></td><td><h12>Швейцарский франк</h12></td><td><h12>CHF</h12></td>
+							<td width='10%'><h12>1</h12></td><td><h12>19.4280</h12></td>
+							</tr><tr width='10%'><td><h12>752</h12></td><td><img src="images/png/se.png" alt="" /></td><td><h12>Шведская крона</h12></td><td><h12>SEK</h12></td>
+							<td width='10%'><h12>10</h12></td><td><h12>16.2465</h12></td>
+							</tr><tr width='10%'><td><h12>933</h12></td><td><img src="images/png/bl.png" alt="" /></td><td><h12>Белорусский рубль</h12></td><td><h12>BYN</h12></td>
+							<td width='10%'><h12>1</h12></td><td><h12>5.3177</h12></td>
+							</tr><tr width='10%'><td><h12>398</h12></td><td><img src="images/png/ka.png" alt="" /></td><td><h12>Тенге</h12></td><td><h12>KZT</h12></td>
+							<td width='10%'><h12>100</h12></td><td><h12>3.6434</h12></td>
+							</tr><tr width='10%'><td><h12>944</h12></td><td><img src="images/png/az.png" alt="" /></td><td><h12>Азербайджанский манат</h12></td><td><h12>AZN</h12></td>
+							<td width='10%'><h12>1</h12></td><td><h12>9.4706</h12></td>
+							</tr><tr width='10%'><td><h12>972</h12></td><td><img src="images/png/ta.png" alt="" /></td><td><h12>Сомони</h12></td><td><h12>TJS</h12></td>
+							<td width='10%'><h12>1</h12></td><td><h12>1.7418</h12></td>
+							</tr><tr width='10%'><td><h12>554</h12></td><td><img src="images/png/ne.png" alt="" /></td><td><h12>Новозеландский доллар</h12></td><td><h12>NZD</h12></td>
+							<td width='10%'><h12>1</h12></td><td><h12>9.1118</h12></td>
+							</tr><tr width='10%'><td><h12>344</h12></td><td><img src="images/png/ho.png" alt="" /></td><td><h12>Гонконгский доллар</h12></td><td><h12>HKD</h12></td>
+							<td width='10%'><h12>1</h12></td><td><h12>2.0523</h12></td>
+							</tr><tr width='10%'><td><h12>51</h12></td><td><img src="images/png/ar.png" alt="" /></td><td><h12>Армянский драм</h12></td><td><h12>AMD</h12></td>
+							<td width='10%'><h12>1000</h12></td><td><h12>44.2892</h12></td>
+							</tr><tr width='10%'><td><h12>36</h12></td><td><img src="images/png/au.png" alt="" /></td><td><h12>Австралийский доллар</h12></td><td><h12>AUD</h12></td>
+							<td width='10%'><h12>1</h12></td><td><h12>11.3006</h12></td>
+							</tr><tr width='10%'><td><h12>124</h12></td><td><img src="images/png/ca.png" alt="" /></td><td><h12>Канадский доллар</h12></td><td><h12>CAD</h12></td>
+							<td width='10%'><h12>1</h12></td><td><h12>11.3894</h12></td>
+							</tr><tr width='10%'><td><h12>417</h12></td><td><img src="images/png/kgz.png" alt="" /></td><td><h12>Киргизский сом</h12></td><td><h12>KGS</h12></td>
+							<td width='10%'><h12>100</h12></td><td><h12>18.4109</h12></td>
+							</tr><tr width='10%'><td><h12>203</h12></td><td><img src="images/png/czk.png" alt="" /></td><td><h12>Чешская крона</h12></td><td><h12>CZK</h12></td>
+							<td width='10%'><h12>10</h12></td><td><h12>7.5378</h12></td>
+							</tr><tr width='10%'><td><h12>784</h12></td><td><img src="images/png/oae.png" alt="" /></td><td><h12>Дирхам ОАЭ</h12></td><td><h12>AED</h12></td>
+							<td width='10%'><h12>1</h12></td><td><h12>4.3839</h12></td>
+							</tr><tr width='10%'><td><h12>941</h12></td><td><img src="images/png/srb.png" alt="" /></td><td><h12>Сербский динар</h12></td><td><h12>RSD</h12></td>
+							<td width='10%'><h12>100</h12></td><td><h12>15.5884</h12></td>
+							</tr><tr width='10%'><td><h12>356</h12></td><td><img src="images/png/ind.png" alt="" /></td><td><h12>Индийская рупия</h12></td><td><h12>INR</h12></td>
+							<td width='10%'><h12>10</h12></td><td><h12>1.6790</h12></td>
+							</tr></table><br>
+<div align='right'>
+<a href='/informer.php'><h8>Информеры...</h8></a>
+<a href='csv.php?vid=val&date=2026-09-29&lang=ru' ><img src='img/csv.png' width='30' height='30'></a>
+<a href='/print.php?print=val&lang=ru' target='_blank'> <img src='img/print.png' width='30' height='30'/ ></a>
+</div>
+<input type='checkbox' id='date' class='del'/><label for='date' class='del'> Информация о курсе валют по дате</label>
+<div>
+<form action='kurs_val.php?lang=ru' method='post'> 
+<p><br>
+<select class='input' type='text' name='day_d'><option value=1>1</option><option value=2>2</option><option value=3>3</option><option value=4>4</option><option value=5>5</option><option value=6>6</option><option value=7>7</option><option value=8>8</option><option value=9>9</option><option value=10>10</option><option value=11>11</option><option value=12>12</option><option value=13>13</option><option value=14>14</option><option value=15>15</option><option value=16>16</option><option value=17>17</option><option value=18>18</option><option value=19>19</option><option value=20>20</option><option value=21>21</option><option value=22>22</option><option value=23>23</option><option value=24>24</option><option value=25>25</option><option value=26>26</option><option value=27>27</option><option value=28>28</option><option value=29>29</option><option value=30>30</option><option value=31>31</option></select>
+<select class='input' type='text' name='mount_d'>  
+<option value='01'>Январь</option>
+<option value='02'>Февраль</option>
+<option value='03'>Март</option>
+<option value='04'>Апрель</option>
+<option value='05'>Май</option>
+<option value='06'>Июнь</option>
+<option value='07'>Июль</option>
+<option value='08'>Август</option>
+<option value='09'>Сентябрь</option>
+<option value='10'>Октябрь</option>
+<option value='11'>Ноябрь</option>
+<option value='12'>Декабрь</option>
+</select>
+<select class='input' type='text' name='year_d'><option value=2001>2001</option><option value=2002>2002</option><option value=2003>2003</option><option value=2004>2004</option><option value=2005>2005</option><option value=2006>2006</option><option value=2007>2007</option><option value=2008>2008</option><option value=2009>2009</option><option value=2010>2010</option><option value=2011>2011</option><option value=2012>2012</option><option value=2013>2013</option><option value=2014>2014</option><option value=2015>2015</option><option value=2016>2016</option><option value=2017>2017</option><option value=2018>2018</option><option value=2019>2019</option><option value=2020>2020</option><option value=2021>2021</option><option value=2022>2022</option><option value=2023>2023</option><option value=2024>2024</option><option value=2025>2025</option><option value=2026>2026</option></select></p>
+<input type='submit' name='submit_d' value='Показать'/><br><br>
+</form>
+</div>
+<input type='checkbox' id='period' class='del'/><label for='period' class='del'>Информация о курсе валют за указанный период</label>
+<div ><br>
+<form action='kurs_val.php?lang=ru' method='post'> 
+<p><h12>
+с </h12>&nbsp;&nbsp;&nbsp;<select class='input' type='text' name='day_in'><option value=1>1</option><option value=2>2</option><option value=3>3</option><option value=4>4</option><option value=5>5</option><option value=6>6</option><option value=7>7</option><option value=8>8</option><option value=9>9</option><option value=10>10</option><option value=11>11</option><option value=12>12</option><option value=13>13</option><option value=14>14</option><option value=15>15</option><option value=16>16</option><option value=17>17</option><option value=18>18</option><option value=19>19</option><option value=20>20</option><option value=21>21</option><option value=22>22</option><option value=23>23</option><option value=24>24</option><option value=25>25</option><option value=26>26</option><option value=27>27</option><option value=28>28</option><option value=29>29</option><option value=30>30</option><option value=31>31</option></select>
+<select class='input' type='text' name='mount_in'>  
+<option value='01'>Январь</option>
+<option value='02'>Февраль</option>
+<option value='03'>Март</option>
+<option value='04'>Апрель</option>
+<option value='05'>Май</option>
+<option value='06'>Июнь</option>
+<option value='07'>Июль</option>
+<option value='08'>Август</option>
+<option value='09'>Сентябрь</option>
+<option value='10'>Октябрь</option>
+<option value='11'>Ноябрь</option>
+<option value='12'>Декабрь</option>
+</select>
+<select class='input' type='text' name='year_in'><option value=2005>2005</option><option value=2006>2006</option><option value=2007>2007</option><option value=2008>2008</option><option value=2009>2009</option><option value=2010>2010</option><option value=2011>2011</option><option value=2012>2012</option><option value=2013>2013</option><option value=2014>2014</option><option value=2015>2015</option><option value=2016>2016</option><option value=2017>2017</option><option value=2018>2018</option><option value=2019>2019</option><option value=2020>2020</option><option value=2021>2021</option><option value=2022>2022</option><option value=2023>2023</option><option value=2024>2024</option><option value=2025>2025</option><option value=2026>2026</option><option value=2027>2027</option></select>
+<h12>&nbsp;&nbsp;&nbsp;по </h12>&nbsp;&nbsp;<select class='input' type='text' name='day_out'><option value=1>1</option><option value=2>2</option><option value=3>3</option><option value=4>4</option><option value=5>5</option><option value=6>6</option><option value=7>7</option><option value=8>8</option><option value=9>9</option><option value=10>10</option><option value=11>11</option><option value=12>12</option><option value=13>13</option><option value=14>14</option><option value=15>15</option><option value=16>16</option><option value=17>17</option><option value=18>18</option><option value=19>19</option><option value=20>20</option><option value=21>21</option><option value=22>22</option><option value=23>23</option><option value=24>24</option><option value=25>25</option><option value=26>26</option><option value=27>27</option><option value=28>28</option><option value=29>29</option><option value=30>30</option><option value=31>31</option></select>
+<select class='input' type='text' name='mount_out'>  
+<option value='01'>Январь</option>
+<option value='02'>Февраль</option>
+<option value='03'>Март</option>
+<option value='04'>Апрель</option>
+<option value='05'>Май</option>
+<option value='06'>Июнь</option>
+<option value='07'>Июль</option>
+<option value='08'>Август</option>
+<option value='09'>Сентябрь</option>
+<option value='10'>Октябрь</option>
+<option value='11'>Ноябрь</option>
+<option value='12'>Декабрь</option>
+</select>
+<select class='input' type='text' name='year_out'><option value=2005>2005</option><option value=2006>2006</option><option value=2007>2007</option><option value=2008>2008</option><option value=2009>2009</option><option value=2010>2010</option><option value=2011>2011</option><option value=2012>2012</option><option value=2013>2013</option><option value=2014>2014</option><option value=2015>2015</option><option value=2016>2016</option><option value=2017>2017</option><option value=2018>2018</option><option value=2019>2019</option><option value=2020>2020</option><option value=2021>2021</option><option value=2022>2022</option><option value=2023>2023</option><option value=2024>2024</option><option value=2025>2025</option><option value=2026>2026</option><option value=2027>2027</option></select><br>
+<p><h12>Валюты</h12><br>
+
+<select  multiple name='val[]'  style='font-size: 14px;'>
+    <option  selected value='840'>Доллар США</option>
+    <option  selected value='978'>Евро</option>
+    <option  selected value='826'>Фунт стерлингов </option>
+    <option  selected value='643'>Российский рубль</option>
+    <option  selected value='980'>Гривна</option>
+    <option  selected value='498'>Молдавский лей</option>
+    <option  selected value='756'>Швейцарский франк</option>
+    <option  selected value='985'>Злотый</option>
+    <option  selected value='208'>Датская крона</option>
+    <option  selected value='578'>Норвежская крона</option>
+    <option  selected value='752'>Шведская крона</option>
+    <option  selected value='348'>Форинт</option>
+    <option  selected value='975'>Болгарский лев</option>
+    <option  selected value='946'>Румынский лей</option>
+    <option  selected value='376'>Новый израильский шекель</option>
+    <option  selected value='949'>Турецкая лира</option>
+    <option  selected value='392'>Йена</option>
+    <option  selected value='974'>Белорусский рубль</option>
+	<option  selected value='933'>Белорусский рубль</option>
+    <option  selected value='972'>Сомони</option>
+    <option  selected value='398'>Тенге</option>
+    <option  selected value='944'>Азербайджанский манат</option>
+    <option  selected value='554'>Новозеландский доллар</option>
+    <option  selected value='156'>Юань</option>
+    <option  selected value='51'>Армянский драм</option>
+    <option  selected value='36'>Австралийский доллар</option>
+    <option  selected value='124'>Канадский доллар</option>
+    <option  selected value='344'>Гонконгский доллар</option>
+	<option  selected value='203'>Чешская крона</option>
+	<option  selected value='784'>Дирхам ОАЭ</option>
+	<option  selected value='941'>Сербский динар</option>
+	<option  selected value='356'>Индийская рупия</option>
+   </select></p>
+<input type='submit' name='submit' value='Показать'/>
+</form></div>
+        </td>
+        </tr>
+        </table>
+        </div>
+       ﻿<footer id="footer">
+        	
+            <!-- FOOTER SIDEBAR -->
+            <div id="outerfootersidebar">
+                <div class="container">
+                 <br>
+                                <li class="widget-container">
+                                <h7>Ссылки</h7>
+                                    <ul class="flickr">
+                                    	<li><a href="http://president.gospmr.org" target="_blank" title="Президент ПМР"><img src="images/1.png" /></a></li>
+                                        <li><a href="http://government.gospmr.org" target="_blank" title="Правительство ПМР"><img src="images/2.png" alt="" /></a></li>
+                                        <li><a href="http://www.vspmr.org" target="_blank" title="Верховный совет ПМР"><img src="images/3.png" alt="" /></a></li>
+                                        <li><a href="https://mid.gospmr.org/ru" target="_blank" title="Министерство иностранных дел ПМР"><img src="images/6.png" alt="" /></a></li>
+                                        <li><a href="http://justice.idknet.com" target="_blank" title="Министерство юстиции ПМР"><img src="images/7.png" alt="" /></a></li>
+                                        <li><a href="http://minsoctrud.gospmr.org/" target="_blank" title="Министерство по социальной защите и труду ПМР"><img src="images/8.png" alt="" /></a></li>
+                                        <li><a href="http://www.kspmr.idknet.com" target="_blank" title="Конституционный суд ПМР"><img src="images/9.png" alt="" /></a></li>
+                                        <li><a href="http://arbitr.gospmr.org" target="_blank" title="Арбитражный суд ПМР"><img src="images/10.png" alt="" /></a></li>
+                                        <li><a href="http://customs.gospmr.org" target="_blank" title="ГТК ПМР"><img src="images/11.png" alt="" /></a></li>
+                                        <li><a href="http://mer.gospmr.org " target="_blank" title="Министерство экономического развития"><img src="images/12.png" alt="" /></a></li>
+                                        <li><a href="http://minfin-pmr.org/ " target="_blank" title="Министерство финансов ПМР"><img src="images/13.png" alt="" /></a></li>
+										<li><a href="http://bankexim.com/ " target="_blank" title="ЭксимБанк"><img src="images/exim.png" alt="" /></a></li>
+                                        <li><a href="https://www.prisbank.com/ " target="_blank" title="Сбербанк"><img src="images/sber.png" alt="" /></a></li>
+										<li><a href="https://www.agroprombank.com/ " target="_blank" title="Агропромбанк"><img src="images/agro.png" alt="" /></a></li>
+										<li><a href="https://arion.md/" target="_blank" title="АРИОН"><img src="images/arion.png" alt="" /></a></li>
+										<li><a href="https://strahovanie.md/" target="_blank" title="Страховой Дом"><img src="images/stdom.png" alt="" /></a></li>
+										<li><a href="https://acac.md/" target="_blank" title="ACAC"><img src="images/asasa.png" alt="" /></a></li>				
+                                    </ul>
+								</li>
+                      </ul>
+                
+            
+
+				</div>
+            </div>
+            <!-- END FOOTER SIDEBAR -->
+            
+            <!-- COPYRIGHT -->
+            <div id="outercopyright">
+                <div class="container">
+                	<div class="row">
+                        <div id="copyright" class="twelve columns">
+                        Все права защищены &copy; 1999-2026						
+						<a href="http://www.cbpmr.net/rss.xml" target="_blank" title="RSS лента Банка Приднестровья"><img src="images/social/rss.png" alt="" /></a>
+                        
+<!-- Yandex.Metrika informer -->
+<a href="https://metrika.yandex.ru/stat/?id=39240530&amp;from=informer"
+target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/39240530/2_1_53FFB9FF_33FF99FF_0_uniques"
+style="width:80px; height:31px; border:0; float:right;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (уникальные посетители)" class="ym-advanced-informer" data-cid="39240530" data-lang="ru" /></a>
+<!-- /Yandex.Metrika informer -->
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter39240530 = new Ya.Metrika({
+                    id:39240530,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/39240530" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- END COPYRIGHT -->
+        </footer>
+        <!-- END FOOTER -->
+        <div class="clear"></div><!-- clear float --> 
+	</div><!-- end outercontainer -->
+</div><!-- end bodychild -->
+</tr>
+</table>
+<!-- ////////////////////////////////// -->
+<!-- //      Javascript Files        // -->
+<!-- ////////////////////////////////// -->
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script src="js/mobilyslider.js" type="text/javascript"></script>
+	<script src="js/init.js" type="text/javascript"></script>
+	<script src="js/lightbox.js"></script>
+
+<script type="text/javascript" src="js/superfish.js"></script> 
+<script type="text/javascript" src="js/supersubs.js"></script>
+
+
+<script type="text/javascript" src="js/tinynav.min.js"></script>
+
+
+<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="jquery.limit.js"></script>
+<!--<script type="text/javascript">$(document).ready(function(){$('textarea').limit('500','#charsLeft');});</script>-->
+<a href="#" class="scrollup">Наверх</a></body>
+</html>

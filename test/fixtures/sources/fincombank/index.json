@@ -1,0 +1,544 @@
+{
+  "source": "fincombank",
+  "recordedAt": "2026-09-28T17:21:52.477Z",
+  "entries": [
+    {
+      "method": "GET",
+      "url": "https://fincombank.com/ro/curs-valutar",
+      "file": "001.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/ro/curs-valutar",
+      "fetchedAt": "2026-09-28T17:21:56.973Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=12846441&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "002.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:22:00.678Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=4814637929&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "003.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:22:04.200Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=12846288&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "004.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:22:07.725Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=4874221288&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "005.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:22:11.385Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=72948435660&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "006.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:22:15.131Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=6226097953&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "007.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:22:18.647Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=11041234&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "008.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:22:22.253Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=4814557707&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "009.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:22:25.871Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=12846364&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "010.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:22:29.400Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=11041229&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "011.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:22:33.075Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=2211503142&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "012.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:22:36.603Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=12846276&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "013.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:22:40.237Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=4914327148&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "014.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:22:43.824Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=12846342&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "015.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:22:47.329Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=12213222947&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "016.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:22:51.061Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=6867451059&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "017.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:22:54.601Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=12845074&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "018.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:22:58.109Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=7206743271&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "019.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:23:01.691Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=12846176&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "020.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:23:05.178Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=12846318&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "021.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:23:08.674Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=923658689&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "022.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:23:12.166Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=12846713&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "023.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:23:16.032Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=12846672&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "024.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:23:19.582Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=4290088840&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "025.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:23:23.345Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=11041237&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "026.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:23:26.844Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=12846636&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "027.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:23:30.536Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=4856010760&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "028.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:23:34.135Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=22802188571&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "029.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:23:37.657Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=12846429&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "030.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:23:41.166Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=12846267&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "031.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:23:44.822Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=5189836911&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "032.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:23:48.605Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=12846354&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "033.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:23:52.109Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=11828590833&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "034.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:23:55.936Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=12846515&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "035.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:23:59.616Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=1269351423&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "036.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:24:03.193Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=1269453194&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "037.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:24:06.777Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=6888746848&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "038.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:24:10.404Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=1269253185&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "039.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:24:13.985Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=6959637897&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "040.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:24:17.585Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=12846417&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "041.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:24:21.085Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=12846411&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "042.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:24:24.662Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=12846327&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "043.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:24:28.297Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=6810872895&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "044.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:24:31.781Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=7397633454&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "045.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:24:35.282Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=165629556&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "046.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:24:38.963Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=12846397&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "047.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:24:42.468Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=8554212540&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "048.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:24:46.022Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=11834661864&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "049.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:24:49.683Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=6257569163&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "050.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:24:53.256Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=5190056501&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "051.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:24:56.743Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=1087080933&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "052.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:25:00.335Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "POST",
+      "url": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "body": "fktype=5736427039&date=28.09.2026&htmlRates=htmlFilialsRates&htmlConvertor=htmlFililsCurrencies",
+      "file": "053.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/index.php?ajaxCall=Excanges/ajaxGetRatesByFilialDate",
+      "fetchedAt": "2026-09-28T17:25:03.834Z",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "method": "GET",
+      "url": "https://fincombank.com/ro/curs-valutar-pentru-carduri",
+      "file": "054.html",
+      "status": 200,
+      "finalUrl": "https://fincombank.com/ro/curs-valutar-pentru-carduri",
+      "fetchedAt": "2026-09-28T17:25:08.580Z",
+      "contentType": "text/html; charset=UTF-8"
+    }
+  ]
+}

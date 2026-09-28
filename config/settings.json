@@ -1,0 +1,52 @@
+{
+  "staleAfterHours": 36,
+  "retainOffersDays": 14,
+  "retainOfficialDays": 10,
+  "http": {
+    "userAgent": "fx-route-collector/0.1 (personal exchange-rate collector)",
+    "minDelayMs": 3000,
+    "timeoutMs": 30000,
+    "retries": 1,
+    "maxRedirects": 6
+  },
+  "sourceTimeoutMs": 600000,
+  "plausibility": {
+    "maxSpreadPercent": 8,
+    "maxSpreadOverrides": {
+      "UAH": 20,
+      "RUB": 30,
+      "MDL/RUP": 15,
+      "USD/RUB": 30,
+      "EUR/RUB": 30,
+      "PMR:USD/MDL": 15
+    },
+    "maxOfficialDeviationPercent": 8,
+    "maxOfficialDeviationOverrides": {
+      "UAH": 25,
+      "RUB": 15,
+      "USD/RUB": 30,
+      "EUR/RUB": 30
+    },
+    "officialByJurisdiction": { "MD": "bnm", "PMR": "prb" }
+  },
+  "routing": {
+    "topN": 5,
+    "maxExchanges": 3,
+    "maxSteps": 5,
+    "perPairLimit": 6,
+    "cashRounding": {
+      "enabled": true,
+      "verified": false,
+      "defaultUnit": 1,
+      "units": {},
+      "note": "Предположение: при обмене наличных выдаются целые единицы валюты, остаток возвращается в исходной валюте. Не проверено ни в одном банке."
+    },
+    "minorUnits": {
+      "enabled": true,
+      "verified": false,
+      "defaultDecimals": 2,
+      "decimals": {},
+      "note": "Предположение: безналичные суммы и остатки округляются вниз (в пользу банка) до минимальной единицы валюты. Не проверено ни в одном банке."
+    }
+  }
+}

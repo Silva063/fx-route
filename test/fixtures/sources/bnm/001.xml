@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValCurs Date="28.09.2026" name="Cursul oficial de schimb">
+  <Valute ID="47">
+    <NumCode>978</NumCode>
+    <CharCode>EUR</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Euro</Name>
+    <Value>20.2207</Value>
+  </Valute>
+  <Valute ID="44">
+    <NumCode>840</NumCode>
+    <CharCode>USD</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Dolar S.U.A.</Name>
+    <Value>17.7406</Value>
+  </Valute>
+  <Valute ID="36">
+    <NumCode>643</NumCode>
+    <CharCode>RUB</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Rubla ruseasca</Name>
+    <Value>0.2104</Value>
+  </Valute>
+  <Valute ID="35">
+    <NumCode>946</NumCode>
+    <CharCode>RON</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Leu romanesc</Name>
+    <Value>3.8349</Value>
+  </Valute>
+  <Valute ID="43">
+    <NumCode>980</NumCode>
+    <CharCode>UAH</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Hrivna ucraineana</Name>
+    <Value>0.3962</Value>
+  </Valute>
+  <Valute ID="61">
+    <NumCode>784</NumCode>
+    <CharCode>AED</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Dirham E.A.U.</Name>
+    <Value>4.8300</Value>
+  </Valute>
+  <Valute ID="64">
+    <NumCode>008</NumCode>
+    <CharCode>ALL</CharCode>
+    <Nominal>10</Nominal>
+    <Name>Lek albanez</Name>
+    <Value>2.1961</Value>
+  </Valute>
+  <Valute ID="1">
+    <NumCode>051</NumCode>
+    <CharCode>AMD</CharCode>
+    <Nominal>10</Nominal>
+    <Name>Dram armenesc</Name>
+    <Value>0.4879</Value>
+  </Valute>
+  <Valute ID="3">
+    <NumCode>036</NumCode>
+    <CharCode>AUD</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Dolar australian</Name>
+    <Value>12.4690</Value>
+  </Valute>
+  <Valute ID="4">
+    <NumCode>944</NumCode>
+    <CharCode>AZN</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Manat azer</Name>
+    <Value>10.4384</Value>
+  </Valute>
+  <Valute ID="50">
+    <NumCode>933</NumCode>
+    <CharCode>BYN</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Rubla belarusa</Name>
+    <Value>5.8633</Value>
+  </Valute>
+  <Valute ID="8">
+    <NumCode>124</NumCode>
+    <CharCode>CAD</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Dolar canadian</Name>
+    <Value>12.5470</Value>
+  </Valute>
+  <Valute ID="9">
+    <NumCode>756</NumCode>
+    <CharCode>CHF</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Franc elvetian</Name>
+    <Value>21.3948</Value>
+  </Valute>
+  <Valute ID="54">
+    <NumCode>156</NumCode>
+    <CharCode>CNY</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Yuan Renminbi chinezesc</Name>
+    <Value>2.6426</Value>
+  </Valute>
+  <Valute ID="10">
+    <NumCode>203</NumCode>
+    <CharCode>CZK</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Coroana ceha</Name>
+    <Value>0.8313</Value>
+  </Valute>
+  <Valute ID="12">
+    <NumCode>208</NumCode>
+    <CharCode>DKK</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Coroana daneza</Name>
+    <Value>2.7050</Value>
+  </Valute>
+  <Valute ID="17">
+    <NumCode>826</NumCode>
+    <CharCode>GBP</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Lira sterlina</Name>
+    <Value>23.4971</Value>
+  </Valute>
+  <Valute ID="18">
+    <NumCode>981</NumCode>
+    <CharCode>GEL</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Lari georgian</Name>
+    <Value>6.8102</Value>
+  </Valute>
+  <Valute ID="63">
+    <NumCode>344</NumCode>
+    <CharCode>HKD</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Dolar Hong Kong</Name>
+    <Value>2.2617</Value>
+  </Valute>
+  <Valute ID="21">
+    <NumCode>348</NumCode>
+    <CharCode>HUF</CharCode>
+    <Nominal>100</Nominal>
+    <Name>Forint ungar</Name>
+    <Value>5.5448</Value>
+  </Valute>
+  <Valute ID="49">
+    <NumCode>376</NumCode>
+    <CharCode>ILS</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Shekel israelian</Name>
+    <Value>5.8445</Value>
+  </Valute>
+  <Valute ID="65">
+    <NumCode>356</NumCode>
+    <CharCode>INR</CharCode>
+    <Nominal>10</Nominal>
+    <Name>Rupia indiana</Name>
+    <Value>1.8511</Value>
+  </Valute>
+  <Valute ID="23">
+    <NumCode>352</NumCode>
+    <CharCode>ISK</CharCode>
+    <Nominal>10</Nominal>
+    <Name>Coroana islandeza</Name>
+    <Value>1.4781</Value>
+  </Valute>
+  <Valute ID="25">
+    <NumCode>392</NumCode>
+    <CharCode>JPY</CharCode>
+    <Nominal>100</Nominal>
+    <Name>Yen japonez</Name>
+    <Value>11.2412</Value>
+  </Valute>
+  <Valute ID="26">
+    <NumCode>417</NumCode>
+    <CharCode>KGS</CharCode>
+    <Nominal>10</Nominal>
+    <Name>Som kirghiz</Name>
+    <Value>2.0280</Value>
+  </Valute>
+  <Valute ID="66">
+    <NumCode>410</NumCode>
+    <CharCode>KRW</CharCode>
+    <Nominal>100</Nominal>
+    <Name>Won sud-coreean</Name>
+    <Value>1.3095</Value>
+  </Valute>
+  <Valute ID="59">
+    <NumCode>414</NumCode>
+    <CharCode>KWD</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Dinar kuweitian</Name>
+    <Value>57.4697</Value>
+  </Valute>
+  <Valute ID="27">
+    <NumCode>398</NumCode>
+    <CharCode>KZT</CharCode>
+    <Nominal>10</Nominal>
+    <Name>Tenghe kazah</Name>
+    <Value>0.4004</Value>
+  </Valute>
+  <Valute ID="62">
+    <NumCode>807</NumCode>
+    <CharCode>MKD</CharCode>
+    <Nominal>10</Nominal>
+    <Name>Denar macedonian</Name>
+    <Value>3.2790</Value>
+  </Valute>
+  <Valute ID="56">
+    <NumCode>458</NumCode>
+    <CharCode>MYR</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Ringgit malayezian</Name>
+    <Value>4.3548</Value>
+  </Valute>
+  <Valute ID="32">
+    <NumCode>578</NumCode>
+    <CharCode>NOK</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Coroana norvegiana</Name>
+    <Value>1.8656</Value>
+  </Valute>
+  <Valute ID="53">
+    <NumCode>554</NumCode>
+    <CharCode>NZD</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Dolar neozeelandez</Name>
+    <Value>10.0518</Value>
+  </Valute>
+  <Valute ID="33">
+    <NumCode>985</NumCode>
+    <CharCode>PLN</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Zlot polonez</Name>
+    <Value>4.6237</Value>
+  </Valute>
+  <Valute ID="48">
+    <NumCode>941</NumCode>
+    <CharCode>RSD</CharCode>
+    <Nominal>100</Nominal>
+    <Name>Dinar sirb</Name>
+    <Value>17.2088</Value>
+  </Valute>
+  <Valute ID="37">
+    <NumCode>752</NumCode>
+    <CharCode>SEK</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Coroana suedeza</Name>
+    <Value>1.7901</Value>
+  </Valute>
+  <Valute ID="51">
+    <NumCode>972</NumCode>
+    <CharCode>TJS</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Somoni tadjic</Name>
+    <Value>1.9228</Value>
+  </Valute>
+  <Valute ID="60">
+    <NumCode>934</NumCode>
+    <CharCode>TMT</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Manat turkmen</Name>
+    <Value>5.0683</Value>
+  </Valute>
+  <Valute ID="42">
+    <NumCode>949</NumCode>
+    <CharCode>TRY</CharCode>
+    <Nominal>1</Nominal>
+    <Name>Lira turceasca</Name>
+    <Value>0.3620</Value>
+  </Valute>
+  <Valute ID="45">
+    <NumCode>860</NumCode>
+    <CharCode>UZS</CharCode>
+    <Nominal>100</Nominal>
+    <Name>Sum uzbek</Name>
+    <Value>0.1502</Value>
+  </Valute>
+  <Valute ID="46">
+    <NumCode>960</NumCode>
+    <CharCode>XDR</CharCode>
+    <Nominal>1</Nominal>
+    <Name>D.S.T.</Name>
+    <Value>24.1285</Value>
+  </Valute>
+</ValCurs>

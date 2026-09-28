@@ -1,0 +1,15 @@
+{
+  "source": "prisbank",
+  "recordedAt": "2026-09-28T17:20:27.755Z",
+  "entries": [
+    {
+      "method": "GET",
+      "url": "https://api.prisbank.com/courses",
+      "file": "001.json",
+      "status": 200,
+      "finalUrl": "https://api.prisbank.com/courses",
+      "fetchedAt": "2026-09-28T17:20:30.853Z",
+      "contentType": "application/json;charset=UTF-8"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "source": "comertbank",
+  "recordedAt": "2026-09-28T17:21:11.847Z",
+  "entries": [
+    {
+      "method": "GET",
+      "url": "https://comertbank.md/",
+      "file": "001.html",
+      "status": 200,
+      "finalUrl": "https://comertbank.md/",
+      "fetchedAt": "2026-09-28T17:21:22.240Z",
+      "contentType": "text/html; charset=UTF-8"
+    }
+  ]
+}

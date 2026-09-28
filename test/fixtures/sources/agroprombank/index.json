@@ -1,0 +1,15 @@
+{
+  "source": "agroprombank",
+  "recordedAt": "2026-09-28T17:20:24.592Z",
+  "entries": [
+    {
+      "method": "GET",
+      "url": "https://www.agroprombank.com/eshche/poleznoe/kursy-valyut/",
+      "file": "001.html",
+      "status": 200,
+      "finalUrl": "https://www.agroprombank.com/eshche/poleznoe/kursy-valyut/",
+      "fetchedAt": "2026-09-28T17:20:27.719Z",
+      "contentType": "text/html; charset=UTF-8"
+    }
+  ]
+}

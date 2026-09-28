@@ -1,0 +1,15 @@
+{
+  "source": "micb",
+  "recordedAt": "2026-09-28T17:20:38.632Z",
+  "entries": [
+    {
+      "method": "GET",
+      "url": "https://micb.md/",
+      "file": "001.html",
+      "status": 200,
+      "finalUrl": "https://micb.md/",
+      "fetchedAt": "2026-09-28T17:20:42.507Z",
+      "contentType": "text/html; charset=UTF-8"
+    }
+  ]
+}

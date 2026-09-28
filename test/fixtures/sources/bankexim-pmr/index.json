@@ -1,0 +1,15 @@
+{
+  "source": "bankexim-pmr",
+  "recordedAt": "2026-09-28T17:20:30.854Z",
+  "entries": [
+    {
+      "method": "GET",
+      "url": "https://bankexim.com/",
+      "file": "001.html",
+      "status": 200,
+      "finalUrl": "https://bankexim.com/",
+      "fetchedAt": "2026-09-28T17:20:35.267Z",
+      "contentType": "text/html; charset=UTF-8"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+# Разовая проверка доступности источников курсов из GitHub Actions (этап 0).
+# Запуск: вкладка Actions -> "Recon probe" -> Run workflow.
+name: Recon probe
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node recon/probe.mjs probe-result-gha.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: probe-result-gha
+          path: probe-result-gha.json

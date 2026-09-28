@@ -1,0 +1,220 @@
+{
+  "probedAt": "2026-09-28T16:56:37.081Z",
+  "runner": "local",
+  "egress": {
+    "ip": "95.153.81.71",
+    "country": "MD",
+    "org": "AS1547 INTERDNESTRKOM, Sovmestnoe Zakrytoe Aktsionernoe Obshchestvo"
+  },
+  "results": [
+    {
+      "id": "agroprombank-html",
+      "url": "https://www.agroprombank.com/eshche/poleznoe/kursy-valyut/",
+      "finalUrl": "https://www.agroprombank.com/eshche/poleznoe/kursy-valyut/",
+      "ok": true,
+      "status": 200,
+      "bytes": 84944,
+      "protection": "",
+      "server": "Angie",
+      "ms": 176
+    },
+    {
+      "id": "agroprombank-json",
+      "url": "https://www.agroprombank.com/includes/histratesnew.php?type=all&date=28.09.2026&json=1",
+      "finalUrl": "https://www.agroprombank.com/includes/histratesnew.php?type=all&date=28.09.2026&json=1",
+      "ok": true,
+      "status": 200,
+      "bytes": 2790,
+      "protection": "",
+      "server": "Angie",
+      "ms": 59
+    },
+    {
+      "id": "prisbank-api",
+      "url": "https://api.prisbank.com/courses",
+      "finalUrl": "https://api.prisbank.com/courses",
+      "ok": true,
+      "status": 200,
+      "bytes": 5193,
+      "protection": "",
+      "server": "nginx",
+      "ms": 110
+    },
+    {
+      "id": "bankexim-pmr",
+      "url": "https://bankexim.com/",
+      "finalUrl": "https://bankexim.com/",
+      "ok": true,
+      "status": 200,
+      "bytes": 71686,
+      "protection": "",
+      "server": "nginx/1.18.0 (Ubuntu)",
+      "ms": 1502
+    },
+    {
+      "id": "cbpmr-official",
+      "url": "https://www.cbpmr.net/kursval.php?lang=ru",
+      "finalUrl": "https://www.cbpmr.net/kursval.php?lang=ru",
+      "ok": true,
+      "status": 200,
+      "bytes": 47514,
+      "protection": "",
+      "server": "nginx",
+      "ms": 74
+    },
+    {
+      "id": "bnm-official-xml",
+      "url": "https://www.bnm.md/ro/official_exchange_rates?get_xml=1&date=28.09.2026",
+      "finalUrl": "https://www.bnm.md/ro/official_exchange_rates?get_xml=1&date=28.09.2026",
+      "ok": true,
+      "status": 200,
+      "bytes": 6912,
+      "protection": "",
+      "server": "Apache",
+      "ms": 45
+    },
+    {
+      "id": "maib",
+      "url": "https://www.maib.md/ro/curs-valutar",
+      "finalUrl": "https://www.maib.md/ro/curs-valutar",
+      "ok": true,
+      "status": 200,
+      "bytes": 193496,
+      "protection": "Imperva Incapsula",
+      "server": "nginx",
+      "ms": 349
+    },
+    {
+      "id": "micb",
+      "url": "https://micb.md/",
+      "finalUrl": "https://micb.md/",
+      "ok": true,
+      "status": 200,
+      "bytes": 291609,
+      "protection": "Cloudflare (без challenge)",
+      "server": "cloudflare",
+      "ms": 517
+    },
+    {
+      "id": "victoriabank-cash",
+      "url": "https://www.victoriabank.md/bff/api/currency-rates?dateFrom=2026-09-28&dateTo=2026-09-28&marketType=11&lang=ro-RO",
+      "finalUrl": "https://www.victoriabank.md/bff/api/currency-rates?dateFrom=2026-09-28&dateTo=2026-09-28&marketType=11&lang=ro-RO",
+      "ok": true,
+      "status": 200,
+      "bytes": 841,
+      "protection": "",
+      "server": "",
+      "ms": 59
+    },
+    {
+      "id": "victoriabank-online",
+      "url": "https://www.victoriabank.md/bff/api/currency-rates?dateFrom=2026-09-28&dateTo=2026-09-28&marketType=14&lang=ro-RO",
+      "finalUrl": "https://www.victoriabank.md/bff/api/currency-rates?dateFrom=2026-09-28&dateTo=2026-09-28&marketType=14&lang=ro-RO",
+      "ok": true,
+      "status": 200,
+      "bytes": 1669,
+      "protection": "",
+      "server": "",
+      "ms": 20
+    },
+    {
+      "id": "otpbank",
+      "url": "https://www.otpbank.md/exchange",
+      "finalUrl": "https://www.otpbank.md/exchange",
+      "ok": true,
+      "status": 200,
+      "bytes": 303199,
+      "protection": "",
+      "server": "",
+      "ms": 680
+    },
+    {
+      "id": "procreditbank",
+      "url": "https://procreditbank.md/ro/schimb_valutar",
+      "finalUrl": "https://procreditbank.md/ro/schimb_valutar",
+      "ok": true,
+      "status": 200,
+      "bytes": 85785,
+      "protection": "",
+      "server": "",
+      "ms": 782
+    },
+    {
+      "id": "fincombank-cash",
+      "url": "https://fincombank.com/ro/curs-valutar",
+      "finalUrl": "https://fincombank.com/ro/curs-valutar",
+      "ok": true,
+      "status": 200,
+      "bytes": 89554,
+      "protection": "",
+      "server": "",
+      "ms": 1405
+    },
+    {
+      "id": "fincombank-card",
+      "url": "https://fincombank.com/ro/curs-valutar-pentru-carduri",
+      "finalUrl": "https://fincombank.com/ro/curs-valutar-pentru-carduri",
+      "ok": true,
+      "status": 200,
+      "bytes": 67034,
+      "protection": "",
+      "server": "",
+      "ms": 2271
+    },
+    {
+      "id": "energbank-cash",
+      "url": "https://www.energbank.com/api/v1/main/corebanking/exchanges/cash/history",
+      "finalUrl": "https://www.energbank.com/api/v1/main/corebanking/exchanges/cash/history",
+      "ok": true,
+      "status": 200,
+      "bytes": 1738,
+      "protection": "",
+      "server": "nginx",
+      "ms": 166
+    },
+    {
+      "id": "energbank-card",
+      "url": "https://www.energbank.com/api/v1/main/corebanking/exchanges/card/history",
+      "finalUrl": "https://www.energbank.com/api/v1/main/corebanking/exchanges/card/history",
+      "ok": true,
+      "status": 200,
+      "bytes": 894,
+      "protection": "",
+      "server": "nginx",
+      "ms": 61
+    },
+    {
+      "id": "eurocreditbank",
+      "url": "https://www.ecb.md/",
+      "finalUrl": "https://www.ecb.md/",
+      "ok": true,
+      "status": 200,
+      "bytes": 212298,
+      "protection": "",
+      "server": "Apache",
+      "ms": 1976
+    },
+    {
+      "id": "comertbank",
+      "url": "https://comertbank.md/",
+      "finalUrl": "https://comertbank.md/",
+      "ok": true,
+      "status": 200,
+      "bytes": 729462,
+      "protection": "",
+      "server": "",
+      "ms": 249
+    },
+    {
+      "id": "eximbank-md",
+      "url": "https://www.eximbank.md/",
+      "finalUrl": "https://eximbank.md/ro",
+      "ok": true,
+      "status": 200,
+      "bytes": 101306,
+      "protection": "Imperva Incapsula",
+      "server": "",
+      "ms": 827
+    }
+  ]
+}

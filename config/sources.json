@@ -1,0 +1,519 @@
+{
+  "sources": [
+    {
+      "id": "bnm",
+      "name": "Национальный банк Молдовы",
+      "jurisdiction": "MD",
+      "kind": "official",
+      "website": "https://www.bnm.md/",
+      "ratesUrl": "https://www.bnm.md/ro/official_exchange_rates?get_xml=1",
+      "collect": "auto",
+      "adapter": "bnm",
+      "note": "Официальный курс: только справочный ориентир и эталон для проверок правдоподобности, не предложение обмена."
+    },
+    {
+      "id": "prb",
+      "name": "Приднестровский республиканский банк",
+      "jurisdiction": "PMR",
+      "kind": "official",
+      "website": "https://www.cbpmr.net/",
+      "ratesUrl": "https://www.cbpmr.net/kursval.php?lang=ru",
+      "collect": "auto",
+      "adapter": "prb",
+      "note": "Официальный курс ПМР публикуется заранее, на следующий день."
+    },
+    {
+      "id": "agroprombank",
+      "name": "Агропромбанк",
+      "jurisdiction": "PMR",
+      "kind": "bank",
+      "website": "https://www.agroprombank.com/",
+      "ratesUrl": "https://www.agroprombank.com/eshche/poleznoe/kursy-valyut/",
+      "collect": "auto",
+      "adapter": "agroprombank",
+      "tables": {
+        "commercial": {
+          "label": "Текущие коммерческие курсы валют",
+          "channel": "cash",
+          "channelConfidence": "assumed",
+          "use": "offer"
+        },
+        "apb-online": {
+          "label": "Курсы валют «APB Online»",
+          "channel": "online",
+          "use": "offer"
+        }
+      },
+      "excludedTables": {
+        "commission": "Коммерческие курсы для списания комиссий — не обмен",
+        "consumer-credit": "Курс потребительских кредитов — не обмен",
+        "official": "Копия официального курса ПРБ — берём у ПРБ"
+      },
+      "note": "Канал таблицы «Текущие коммерческие курсы» на сайте не подписан — принят как наличные (не подтверждён). Прямые пары USD/MDL есть только в APB Online и только в HTML."
+    },
+    {
+      "id": "prisbank",
+      "name": "Приднестровский Сбербанк (ЗАО)",
+      "jurisdiction": "PMR",
+      "kind": "bank",
+      "website": "https://prisbank.com/",
+      "ratesUrl": "https://prisbank.com/#exchange-rates",
+      "collect": "auto",
+      "adapter": "prisbank",
+      "tables": {
+        "cash": {
+          "label": "Наличные курсы валют",
+          "channel": "cash",
+          "use": "offer"
+        },
+        "commercial-individuals": {
+          "label": "Коммерческий курс для физических лиц",
+          "channel": "unknown",
+          "use": "offer"
+        }
+      },
+      "excludedTables": {
+        "official": "Копия официального курса ПРБ",
+        "pension-rf": "Спецкурс для пенсий РФ — не обмен"
+      },
+      "note": "Банк ПМР, не российский Сбербанк."
+    },
+    {
+      "id": "bankexim-pmr",
+      "name": "Эксимбанк (ПМР)",
+      "jurisdiction": "PMR",
+      "kind": "bank",
+      "website": "https://bankexim.com/",
+      "ratesUrl": "https://bankexim.com/",
+      "collect": "auto",
+      "adapter": "html-tables",
+      "tables": {
+        "branches": {
+          "label": "В отделениях Банка",
+          "channel": "cash",
+          "channelConfidence": "assumed",
+          "use": "offer"
+        },
+        "internet-bank": {
+          "label": "В Интернет-Банке",
+          "channel": "online",
+          "use": "offer"
+        }
+      },
+      "note": "Сайт за FOXCLOUD: проверка браузера срабатывает выборочно. При challenge — статус protected, только вручную. Не путать с Eximbank Молдовы.",
+      "params": {
+        "url": "https://bankexim.com/",
+        "quote": "RUP",
+        "tables": [
+          {
+            "table": "branches",
+            "locate": {
+              "heading": "^В отделениях Банка$"
+            },
+            "columns": {
+              "code": 0,
+              "buy": 1,
+              "sell": 2
+            }
+          },
+          {
+            "table": "internet-bank",
+            "locate": {
+              "heading": "^В Интернет-Банке$"
+            },
+            "columns": {
+              "code": 0,
+              "buy": 1,
+              "sell": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "maib",
+      "name": "maib (Moldova-Agroindbank)",
+      "jurisdiction": "MD",
+      "kind": "bank",
+      "website": "https://www.maib.md/",
+      "ratesUrl": "https://www.maib.md/ro/curs-valutar",
+      "collect": "auto",
+      "adapter": "html-tables",
+      "tables": {
+        "cash-branches": {
+          "label": "Schimb valutar în numerar din sucursale",
+          "channel": "cash",
+          "use": "offer"
+        },
+        "card": {
+          "label": "Operațiuni cu card",
+          "channel": "card",
+          "use": "offer"
+        }
+      },
+      "excludedTables": {
+        "customs": "Наличные в таможенных агентствах — исключено по решению владельца",
+        "atm": "Обмен в банкоматах (4 категории) — не включать (решение владельца)"
+      },
+      "params": {
+        "url": "https://www.maib.md/ro/curs-valutar",
+        "quote": "MDL",
+        "tables": [
+          {
+            "table": "cash-branches",
+            "locate": {
+              "selector": "#one-one-new table"
+            },
+            "expect": "numerar din sucursale",
+            "columns": {
+              "code": 0,
+              "buy": 1,
+              "sell": 2
+            }
+          },
+          {
+            "table": "card",
+            "locate": {
+              "selector": "#two-new table"
+            },
+            "expect": "cardul",
+            "columns": {
+              "code": 0,
+              "buy": 1,
+              "sell": 2
+            },
+            "date": {
+              "selector": "#two-new",
+              "regex": "la data (\\d{2}\\.\\d{2}\\.\\d{4})"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "micb",
+      "name": "Moldindconbank",
+      "jurisdiction": "MD",
+      "kind": "bank",
+      "website": "https://micb.md/",
+      "ratesUrl": "https://micb.md/",
+      "collect": "auto",
+      "adapter": "micb",
+      "tables": {
+        "cash": {
+          "label": "Numerar",
+          "channel": "cash",
+          "use": "offer"
+        },
+        "card": {
+          "label": "Carduri",
+          "channel": "card",
+          "use": "offer"
+        }
+      },
+      "note": "Сайт за Cloudflare; challenge на момент разведки не выдавался."
+    },
+    {
+      "id": "victoriabank",
+      "name": "Victoriabank",
+      "jurisdiction": "MD",
+      "kind": "bank",
+      "website": "https://www.victoriabank.md/",
+      "ratesUrl": "https://www.victoriabank.md/curs-valutar",
+      "collect": "auto",
+      "adapter": "victoriabank",
+      "tables": {
+        "cash": {
+          "label": "Cursul valutar numerar (marketType=11)",
+          "channel": "cash",
+          "use": "offer"
+        },
+        "online": {
+          "label": "Cursul valutar online (marketType=14)",
+          "channel": "online",
+          "use": "offer"
+        }
+      },
+      "excludedTables": {
+        "internal-settlements": "Curs valutar decontări interne (marketType=13) — не обмен для физлиц"
+      },
+      "note": "Наличные курсы на сайте указаны для конкретного отделения (Sucursala nr.3); в JSON отделения нет."
+    },
+    {
+      "id": "otpbank",
+      "name": "OTP Bank",
+      "jurisdiction": "MD",
+      "kind": "bank",
+      "website": "https://www.otpbank.md/",
+      "ratesUrl": "https://www.otpbank.md/exchange",
+      "collect": "auto",
+      "adapter": "html-tables",
+      "tables": {
+        "branches": {
+          "label": "În sucursale",
+          "channel": "cash",
+          "channelConfidence": "assumed",
+          "use": "offer"
+        },
+        "card": {
+          "label": "Carduri",
+          "channel": "card",
+          "use": "offer"
+        }
+      },
+      "note": "Таблица «În sucursale» не подписана как наличные — принята как наличные (не подтверждено).",
+      "params": {
+        "url": "https://www.otpbank.md/exchange",
+        "quote": "MDL",
+        "date": {
+          "selector": ".currency_converter_module_container .tab__common-title"
+        },
+        "tables": [
+          {
+            "table": "branches",
+            "locate": {
+              "tab": {
+                "scope": ".currency_converter_module_container",
+                "titles": ".tab-btns .tab-btns__toggle-tab",
+                "panels": "ul.tab__container > li.tab__item",
+                "title": "^În sucursale$"
+              }
+            },
+            "columns": {
+              "code": 0,
+              "buy": 1,
+              "sell": 2
+            }
+          },
+          {
+            "table": "card",
+            "locate": {
+              "tab": {
+                "scope": ".currency_converter_module_container",
+                "titles": ".tab-btns .tab-btns__toggle-tab",
+                "panels": "ul.tab__container > li.tab__item",
+                "title": "^Carduri$"
+              }
+            },
+            "columns": {
+              "code": 0,
+              "buy": 1,
+              "sell": 2
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "procreditbank",
+      "name": "ProCredit Bank",
+      "jurisdiction": "MD",
+      "kind": "bank",
+      "website": "https://procreditbank.md/",
+      "ratesUrl": "https://procreditbank.md/ro/schimb_valutar",
+      "collect": "auto",
+      "adapter": "html-tables",
+      "tables": {
+        "cash": {
+          "label": "Curs valutar persoane fizice pentru operațiuni în numerar",
+          "channel": "cash",
+          "use": "offer"
+        },
+        "card": {
+          "label": "Curs valutar pentru operațiunile cu card",
+          "channel": "card",
+          "use": "offer"
+        }
+      },
+      "params": {
+        "url": "https://procreditbank.md/ro/schimb_valutar",
+        "quote": "MDL",
+        "tables": [
+          {
+            "table": "cash",
+            "locate": {
+              "selector": "form#procredit-exchange-rates-cash-form table"
+            },
+            "container": "section",
+            "expect": "numerar",
+            "columns": {
+              "code": 0,
+              "buy": 1,
+              "sell": 2
+            },
+            "date": {
+              "selector": "section.procredit-exchange-rates-cash-form",
+              "regex": "la data de (\\d{2}\\.\\d{2}\\.\\d{4})"
+            }
+          },
+          {
+            "table": "card",
+            "locate": {
+              "selector": "form#procredit-exchange-rates-card-form table"
+            },
+            "container": "section",
+            "expect": "card",
+            "columns": {
+              "code": 0,
+              "buy": 1,
+              "sell": 2
+            },
+            "date": {
+              "selector": "section.procredit-exchange-rates-card-form",
+              "regex": "la data de (\\d{2}\\.\\d{2}\\.\\d{4})"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "fincombank",
+      "name": "FinComBank (Banca de Finanțe și Comerț)",
+      "jurisdiction": "MD",
+      "kind": "bank",
+      "website": "https://fincombank.com/",
+      "ratesUrl": "https://fincombank.com/ro/curs-valutar",
+      "collect": "auto",
+      "adapter": "fincombank",
+      "tables": {
+        "cash-branch": {
+          "label": "Numerar, по отделениям",
+          "channel": "cash",
+          "use": "offer"
+        },
+        "card": {
+          "label": "Cursul valutar la carduri",
+          "channel": "card",
+          "use": "offer"
+        }
+      }
+    },
+    {
+      "id": "energbank",
+      "name": "Energbank",
+      "jurisdiction": "MD",
+      "kind": "bank",
+      "website": "https://www.energbank.com/",
+      "ratesUrl": "https://www.energbank.com/ro",
+      "collect": "manual-only",
+      "manualReason": "Курсы доступны только через /api/, а robots.txt запрещает /api/. Вносите курс вручную с сайта."
+    },
+    {
+      "id": "eurocreditbank",
+      "name": "EuroCreditBank",
+      "jurisdiction": "MD",
+      "kind": "bank",
+      "website": "https://www.ecb.md/",
+      "ratesUrl": "https://www.ecb.md/",
+      "collect": "auto",
+      "adapter": "eurocreditbank",
+      "tables": {
+        "cash": {
+          "label": "Numerar",
+          "channel": "cash",
+          "use": "offer"
+        },
+        "card": {
+          "label": "Carduri",
+          "channel": "card",
+          "use": "offer"
+        },
+        "agencies": {
+          "label": "Curs valutar agentii (по агентствам)",
+          "channel": "cash",
+          "channelConfidence": "assumed",
+          "use": "offer"
+        }
+      },
+      "note": "robots.txt: Crawl-delay 10. Канал таблицы по агентствам не подписан."
+    },
+    {
+      "id": "comertbank",
+      "name": "Comerțbank",
+      "jurisdiction": "MD",
+      "kind": "bank",
+      "website": "https://comertbank.md/",
+      "ratesUrl": "https://comertbank.md/",
+      "collect": "auto",
+      "adapter": "comertbank",
+      "tables": {
+        "comertbank": {
+          "label": "Вкладка «COMERTBANK»",
+          "channel": "cash",
+          "channelConfidence": "assumed",
+          "use": "offer"
+        },
+        "card": {
+          "label": "Вкладка «CARD»",
+          "channel": "card",
+          "use": "offer"
+        }
+      },
+      "note": "Только адрес без www: www.comertbank.md уходит в петлю редиректов. robots.txt: Crawl-delay 10. Вкладка COMERTBANK совпадает с курсом «la sucursale și agenții» — принята как наличные (не подтверждено)."
+    },
+    {
+      "id": "eximbank-md",
+      "name": "Eximbank (Молдова, Intesa Sanpaolo)",
+      "jurisdiction": "MD",
+      "kind": "bank",
+      "website": "https://eximbank.md/",
+      "ratesUrl": "https://eximbank.md/ro",
+      "collect": "auto",
+      "adapter": "html-tables",
+      "tables": {
+        "cashdesk": {
+          "label": "La casierii",
+          "channel": "cash",
+          "use": "offer"
+        },
+        "card": {
+          "label": "Pe card",
+          "channel": "card",
+          "use": "offer"
+        }
+      },
+      "note": "Сайт за Imperva Incapsula: challenge срабатывает выборочно. При challenge — статус protected, только вручную. Не путать с Эксимбанком ПМР.",
+      "params": {
+        "url": "https://eximbank.md/ro",
+        "quote": "MDL",
+        "date": {
+          "selector": "section.exchange-rates .section-title"
+        },
+        "tables": [
+          {
+            "table": "cashdesk",
+            "locate": {
+              "tab": {
+                "scope": "section.exchange-rates",
+                "titles": ".tab-btns .tab-btns__toggle-tab",
+                "panels": "ul.tab__container > li.tab__item",
+                "title": "^La casierii$"
+              }
+            },
+            "columns": {
+              "code": 0,
+              "buy": 1,
+              "sell": 2
+            }
+          },
+          {
+            "table": "card",
+            "locate": {
+              "tab": {
+                "scope": "section.exchange-rates",
+                "titles": ".tab-btns .tab-btns__toggle-tab",
+                "panels": "ul.tab__container > li.tab__item",
+                "title": "^PE CARD$"
+              }
+            },
+            "columns": {
+              "code": 0,
+              "buy": 1,
+              "sell": 2
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

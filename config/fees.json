@@ -1,0 +1,37 @@
+{
+  "rules": [
+    {
+      "id": "md-cash-fx-purchase-0.1",
+      "label": "Обязательный сбор 0,1% при покупке наличной иностранной валюты за леи (Молдова)",
+      "match": {
+        "jurisdiction": ["MD"],
+        "channel": ["cash"],
+        "from": ["MDL"],
+        "toNot": ["MDL"]
+      },
+      "fee": { "percent": 0.1, "mode": "onTop" },
+      "verified": true,
+      "legalBasis": "Закон о Республиканском и местных фондах социальной поддержки населения № 827-XIV от 18.02.2000",
+      "sourceUrls": [
+        "https://fincombank.com/ro/curs-valutar",
+        "https://www.victoriabank.md/curs-valutar",
+        "https://www.ecb.md/",
+        "https://micb.md/"
+      ]
+    },
+    {
+      "id": "md-cash-fx-cross-0.1-unverified",
+      "label": "Сбор 0,1% при обмене одной иностранной валюты на другую за наличные (Молдова) — не проверено",
+      "match": {
+        "jurisdiction": ["MD"],
+        "channel": ["cash"],
+        "fromNot": ["MDL"],
+        "toNot": ["MDL"]
+      },
+      "fee": { "percent": 0.1, "mode": "onTop" },
+      "verified": false,
+      "note": "Осторожная оценка по решению владельца: сайты банков говорят о сборе при покупке валюты клиентом, но не уточняют, взимается ли он при обмене иностранной валюты на иностранную. Применяется по умолчанию, пока не проверено.",
+      "legalBasis": "Закон № 827-XIV от 18.02.2000 (применимость к кросс-обмену не подтверждена)"
+    }
+  ]
+}

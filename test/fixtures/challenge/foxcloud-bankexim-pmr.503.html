@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>FOXCLOUD datacenter solutions</title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+
+    <style type="text/css">
+        html, body {
+            background: #e3e3e3;
+            height: 100%;
+            margin: 0;
+            overflow-x: hidden;
+            width: 100%;
+        }
+        body {
+            font-family: 'Raleway', sans-serif;
+            letter-spacing: 1px;
+        }
+        .card {
+            background: #fbfbfb;
+            border-radius: 0.5em;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+            float: left;
+            left: 50%;
+            top: 50%;
+            margin: 0 auto;
+            padding: 2em;
+            position: relative;
+            text-align: center;
+            width: 80%;
+            transform: translateY(-50%) translateX(-50%);
+            color: #6f6f6f;
+        }
+        h1 {
+            font-size: 2em;
+            font-weight: 400;
+            margin: 1em;
+        }
+        h2 {
+            font-size: 1.5em;
+            font-weight: 400;
+            margin: 1em;
+        }
+        p {
+            font-weight: 300;
+            margin: 1em;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .blob-box{
+            padding: 1em;
+            width: 20%;
+            position: relative;
+            margin: 0 auto;
+        }
+        .blob-1,.blob-2{
+            width:2em;
+            height:2em;
+            position:absolute;
+            background:#cecece;
+            border-radius:50%;
+            top:50%;left:50%;
+            transform:translate(-50%,-50%);
+        }
+        .blob-1{
+            left:20%;
+            animation:osc-l 2.5s ease infinite;
+        }
+        .blob-2{
+            left:80%;
+            animation:osc-r 2.5s ease infinite;
+            background:#1c1c1c;
+        }
+        @keyframes osc-l{
+            0%{left:20%;}
+            50%{left:50%;}
+            100%{left:20%;}
+        }
+        @keyframes osc-r{
+            0%{left:80%;}
+            50%{left:50%;}
+            100%{left:80%;}
+        }
+        #timer {font-size: 1.2em; color: green;}
+        .lang_ru {display: none;}
+        .lang_ro {display: none;}
+    </style>
+
+</head>
+<body>
+
+<div class="card">
+    <h1></h1>
+
+    <div id="loader" class = "blob-box">
+        <div class = "blob-1"></div>
+        <div class = "blob-2"></div>
+    </div>
+
+    <h2 class="lang_en">Please wait while we check your browser to access bankexim.com</h2>
+    <h2 class="lang_ru">Пожалуйста подождите пока мы проверяем ваш браузер для доступа к bankexim.com</h2>
+    <h2 class="lang_ro">Vă rugăm să așteptați până când vă verificăm browserul pentru a accesa bankexim.com</h2>
+
+    <p id="proc_auto">
+        <span class="lang_en">This process is automatic. After a few seconds, your browser will redirect you to the requested site.</span>
+        <span class="lang_ru">Этот процесс автоматический. Через несколько секунд ваш браузер перенаправит вас на запрошенный сайт.</span>
+        <span class="lang_ro">Acest proces este automat. După câteva secunde, browserul vă va redirecționa către site-ul solicitat.</span>
+        </br></br> <span id="timer">&nbsp;</span>
+    </p>
+
+    <h2 id="check_faied" style="display: none; color: red;">
+        <span class="lang_en">Browser check failed.</span>
+        <span class="lang_ru">Проверка браузера не удалась.</span>
+        <span class="lang_ro">Browser check failed.</span>
+    </h2>
+
+    <br>
+    <a href="http://foxcloud.net" target="_blank">
+        <svg style="vertical-align: middle;margin: 0 4px 4px 0;" viewBox="0 0 360 480"  width="25" height="25" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+            <g class="layer" display="inline">
+                <title>Layer 2</title>
+                <path d="m10.15927,30.09772l-0.39676,289.85153l170.50336,140.35313l169.9156,-140.23177l-0.27048,-289.79551l-169.82201,129.4308l-169.92972,-129.60817l0.00001,-0.00001z" fill="#000000" id="svg_4" stroke="#000000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0"/>
+            </g>
+            <g class="layer" display="inline">
+                <title>Layer 3</title>
+                <path d="m34.89084,312.37647l146.08003,118.85986l145.08076,-118.06443l-146.73299,-122.97582l-144.4278,122.18039z" fill="#ffffff" id="svg_5" stroke="#ffffff" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0"/>
+            </g>
+            <g class="layer" display="inline">
+                <title>Layer 4</title>
+                <path d="m61.24182,94.83659l119.89721,334.5839l119.1224,-333.99566l-120.26144,94.77124l-118.75818,-95.35949l0.00001,0.00001z" fill="#1ec1f2" id="svg_7" stroke="#1ec1f2" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0"/>
+                <path d="m32.47287,120.52679l2.19063,192.18665l76.97387,-64.58702l-79.1645,-127.59963z" fill="#1ec1f2" id="svg_8" stroke="#1ec1f2" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0"/>
+                <path d="m327.2549,118.366l-79.53091,129.82313l78.02764,65.20877l1.50327,-195.0319z" fill="#1ec1f2" id="svg_10" stroke="#1ec1f2" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0"/>
+            </g>
+            <g class="layer" display="inline">
+                <title>Layer 5</title>
+                <path d="m32.42783,121.70543l106.69236,190.45112l-56.09652,-156.35827l-50.59584,-34.09285z" fill="#007ac1" id="svg_12" stroke="#007ac1" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0"/>
+                <path d="m327.07643,118.88951l-104.68479,194.58295l56.04972,-157.02059l48.63507,-37.56236z" fill="#007ac1" id="svg_13" stroke="#007ac1" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0"/>
+                <path d="m325.77372,313.08869l-102.97119,-0.25079l53.18231,-41.25976l49.78888,41.51055z" fill="#007ac1" id="svg_14" stroke="#007ac1" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0"/>
+                <path d="m35.0254,312.33375l104.49711,0.08416l-52.69135,-44.41045l-51.80576,44.32629z" fill="#007ac1" id="svg_18" stroke="#007ac1" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0"/>
+            </g>
+            <g class="layer" display="inline">
+                <title>Layer 6</title>
+                <path d="m139.28366,312.53006l83.65719,0.43105l-41.80523,117.43268l-42.15197,-119.06373l0.30001,1.2z" fill="#00aaed" id="svg_19" stroke="#00aaed" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0"/>
+            </g>
+            <g class="layer" display="inline">
+                <title>Layer 7</title>
+                <path d="m163.27745,380.05392l36.25883,0.03824l-18.39706,51.18366l-17.86177,-51.2219z" fill="#000000" id="svg_20" stroke="#000000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="0"/>
+            </g>
+        </svg>
+        FOXCLOUD datacenter solutions
+    </a>
+
+</div>
+
+<script type="text/javascript">
+    var challenge="A|1790613416|95.153.81.71|r6pOgeuB|6753265|f6d42ef645a9bd7b01dc92f199c06a67";
+    eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('p c=u(k);a(c)1a(w,K,c);j m();b w(c){p 9=C B();9.E=b(){a(9.G==B.D){a(9.J==N){m()}j{v(3)}}};9.O("P",y.r,Q);9.R("x-L-c",c);9.S()}b v(e){p z=M(b(){f.g("I").H=e;a(e>0)e--;j{F(z);y.r.U()}},Y)}b m(){f.g(\'18\').n.o=\'s\';f.g(\'15\').n.o=\'s\';f.g(\'1b\').n.o=\'1c\'}b u(k){6 d=k.16(\'|\');a(d[4]!==14&&!V(d[4])){6 q;6 h;6 8;6 l=10(d[4]);6 2=l;6 A=Z;12(6 i=1;i<=A;i++){q=((i%3)*2-(2%7))%19+((i%3)*2)%11;h=((i%4)*2+X.W(2/((2%11)+1)))%17+((i%5)*2)%13;a(q>h){8=l*h}j{8=(2-3)}a(8>7*2||8<2/3)8=l+i;2=8}t k+\'|\'+2}t T}',62,75,'||res||||let||temp3|xmlhttp|if|function|answer|challenge_split|sec|document|getElementById|temp2||else|challenge|num|set_check_failed|style|display|var|temp1|location|none|return|resolve_challenge|set_reload_timer|send_answer||window|reload_timer_interval|nn|XMLHttpRequest|new|DONE|onreadystatechange|clearInterval|readyState|innerHTML|timer|status|1100|guard|setInterval|401|open|GET|true|setRequestHeader|send|null|reload|isNaN|round|Math|1000|38712|parseInt||for||undefined|loader|split||proc_auto||setTimeout|check_faied|block'.split('|'),0,{}))
+
+    var platformLanguage = navigator && (
+        navigator.language ||
+        navigator.browserLanguage ||
+        navigator.systemLanguage ||
+        navigator.userLanguage ||
+        null );
+    var elemsRU, elemsEN, elemsRO;
+
+    if (platformLanguage.match("ru") && document.getElementsByClassName) {
+        var l=0;
+        if (platformLanguage.match("ru")) {
+            elemsRU = document.getElementsByClassName("lang_ru");
+            elemsEN = document.getElementsByClassName("lang_en");
+            l = elemsEN.length;
+            while(l--) elemsEN[l].style.display = "none";
+            l = elemsRU.length;
+            while(l--) elemsRU[l].style.display = "block";
+            document.title = "FOXCLOUD серверы для бизнеса";
+        }
+        else if(platformLanguage.match("ro")){
+            elemsRO = document.getElementsByClassName("lang_ro");
+            elemsEN = document.getElementsByClassName("lang_en");
+            l = elemsEN.length;
+            while(l--) elemsEN[l].style.display = "none";
+            l = elemsRO.length;
+            while(l--) elemsRO[l].style.display = "block";
+            document.title = "FOXCLOUD datacenter solutions";
+        }
+    }
+
+</script>
+
+</body>
+</html>

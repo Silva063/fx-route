@@ -1,0 +1,33 @@
+{
+  "source": "victoriabank",
+  "recordedAt": "2026-09-28T17:20:42.538Z",
+  "entries": [
+    {
+      "method": "GET",
+      "url": "https://www.victoriabank.md/curs-valutar",
+      "file": "001.html",
+      "status": 200,
+      "finalUrl": "https://www.victoriabank.md/curs-valutar",
+      "fetchedAt": "2026-09-28T17:20:45.689Z",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.victoriabank.md/bff/api/currency-rates?dateFrom=2026-09-28&dateTo=2026-09-28&marketType=11&lang=ro-RO",
+      "file": "002.json",
+      "status": 200,
+      "finalUrl": "https://www.victoriabank.md/bff/api/currency-rates?dateFrom=2026-09-28&dateTo=2026-09-28&marketType=11&lang=ro-RO",
+      "fetchedAt": "2026-09-28T17:20:48.706Z",
+      "contentType": "application/json; charset=utf-8"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.victoriabank.md/bff/api/currency-rates?dateFrom=2026-09-28&dateTo=2026-09-28&marketType=14&lang=ro-RO",
+      "file": "003.json",
+      "status": 200,
+      "finalUrl": "https://www.victoriabank.md/bff/api/currency-rates?dateFrom=2026-09-28&dateTo=2026-09-28&marketType=14&lang=ro-RO",
+      "fetchedAt": "2026-09-28T17:20:51.740Z",
+      "contentType": "application/json; charset=utf-8"
+    }
+  ]
+}

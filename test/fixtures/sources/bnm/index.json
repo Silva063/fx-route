@@ -1,0 +1,15 @@
+{
+  "source": "bnm",
+  "recordedAt": "2026-09-28T17:20:18.303Z",
+  "entries": [
+    {
+      "method": "GET",
+      "url": "https://www.bnm.md/ro/official_exchange_rates?get_xml=1&date=28.09.2026",
+      "file": "001.xml",
+      "status": 200,
+      "finalUrl": "https://www.bnm.md/ro/official_exchange_rates?get_xml=1&date=28.09.2026",
+      "fetchedAt": "2026-09-28T17:20:21.408Z",
+      "contentType": "text/xml; charset=utf-8"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "source": "eximbank-md",
+  "recordedAt": "2026-09-28T17:21:22.306Z",
+  "entries": [
+    {
+      "method": "GET",
+      "url": "https://eximbank.md/ro",
+      "file": "001.html",
+      "status": 200,
+      "finalUrl": "https://eximbank.md/ro",
+      "fetchedAt": "2026-09-28T17:21:25.605Z",
+      "contentType": "text/html; charset=UTF-8"
+    }
+  ]
+}
